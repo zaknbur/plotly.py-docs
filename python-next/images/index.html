@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8"/>
+
+      <!-- Media query magic - http://stackoverflow.com/questions/19945658/my-iphone-thinks-its-980px-wide -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+      
+      <!-- code highlighting -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      
+
+      <!--
+      //// Stylesheets
+      -->
+
+      <!-- Fonts -->
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700"
+            rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+      <!-- code highlighting -->
+      <link rel="stylesheet" href="//plot.ly/gh-pages/documentation/static/javascripts/codehighlight/styles/tomorrow.css">
+      <link rel="stylesheet" type="text/css" href="//plot.ly/gh-pages/documentation/static/css/js-splash-highlight.css"/>
+
+      <!-- Main Stylesheets -->
+      <link rel="stylesheet" type="text/css" href="https://images.plot.ly/assets/css/normalize.css">
+      <link rel="stylesheet" type="text/css" href="https://plot.ly/gh-pages/documentation/static//css/main.css?version=237a635fa4">
+
+      <!-- LOCAL DEV STYLESHEET -->
+      <!--<link rel="stylesheet" type="text/css" href="http://api.plotly.dev/all_static/css/main.css">-->
+
+      <!-- Icon -->
+      <link rel="shortcut icon" href="/images/plotly-ico.png" type="image/x-icon"/>
+
+      <!-- Google Tags-->
+      <!-- Google Tag Manager Tag -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6T2RXG');</script>
+
+      <script id="drift">
+  !(function() {
+    var t = (window.driftt = window.drift = window.driftt || []);
+    if (!t.init) {
+      if (t.invoked)
+        return void (
+          window.console &&
+          console.error &&
+          console.error("Drift snippet included twice.")
+        );
+      (t.invoked = !0),
+        (t.methods = [
+          "identify",
+          "config",
+          "track",
+          "reset",
+          "debug",
+          "show",
+          "ping",
+          "page",
+          "hide",
+          "off",
+          "on"
+        ]),
+        (t.factory = function(e) {
+          return function() {
+            var n = Array.prototype.slice.call(arguments);
+            return n.unshift(e), t.push(n), t;
+          };
+        }),
+        t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }),
+        (t.load = function(t) {
+          var e = 3e5,
+            n = Math.ceil(new Date() / e) * e,
+            o = document.createElement("script");
+          (o.type = "text/javascript"),
+            (o.async = !0),
+            (o.crossorigin = "anonymous"),
+            (o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js");
+          var i = document.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(o, i);
+        });
+    }
+  })();
+  drift.SNIPPET_VERSION = "0.3.1";
+  drift.load("4t5t45cv8ey2");
+</script>
+
+
+
+    <!-- META TAGS -->
+    <!-- SEO Tags - title, meta_description -->
+    <title>Layout with images | plotly</title>
+    <meta name="description" content="How to add images to charts as background images or logos.">
+
+<!-- Bing tags -->
+    <meta name="msvalidate.01" content="D319859A832F9F1D15A7646E2A42150A" />
+<!-- Facebook tags -->
+    <meta property="og:title" content="Images"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://images.plot.ly/plotly-documentation/thumbnail/images.png">
+    <meta property="og:description" content="How to add images to charts as background images or logos."/>
+    <meta property="og:url" />
+    <meta property="fb:admins" content="1123751525"/>
+    <meta property="fb:admins" content="22418"/>
+
+<!-- twitter tags -->
+    <meta name="twitter:card" content="photo" />
+    <meta name="twitter:title" content="Images"/>
+    <meta name="twitter:url" content="https://help.plot.lyplotly.py-docs/python-next/images/"/>
+    <meta name="twitter:description" content="How to add images to charts as background images or logos."/>
+    <meta name="twitter:image" content="https://images.plot.ly/plotly-documentation/thumbnail/images.png">
+    <meta name="twitter:site" content="@plotlygraphs"/>
+
+<!-- Favicon -->
+    <link rel="shortcut icon" href="https://plot.ly/gh-pages/documentation/static//images/plotly-ico.png?v=2" />
+
+
+    
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".watch" style="position:relative;">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6T2RXG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+	your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div style="margin-top: 100px"></div>
+
+<header data-spy="affix" data-offset-top="80" class="header-main --default">
+    <div class="--wrap">
+        <div class="--wrap-left"><a href="https://plot.ly/" target="_blank" class="-identity">
+            <div class="-identity">
+                <img src="https://plot.ly/gh-pages/documentation/static//images/plotly_graphing_libraries.png" style="height: 66px;"/>
+            </div></a>
+
+        </div>
+        <div class="--wrap-right">
+            <nav class="--nav-meta" role="navigation">
+                <ul>
+                    <li><a href="https://go.plot.ly/demo-dash" data-mode="1" target="_blank" class="typeform-share button --enterprise-quaternary">DEMO DASH</a></li>
+                    <!-- Adding product dropdown here -->
+                    <!-- <li><a href="https://plot.ly/create/" class="button">PRODUCTS</a></li> -->
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" ng-click="mobile = !mobile" ng-class="{'active': mobile}" style="cursor: pointer;">
+
+
+                <div href="#" class="menu"><span></span></div>
+
+            </div>
+            <nav class="--nav-mobile">
+                <ul>
+                    <li><a href="https://plot.ly/feed/" target="_blank"><span class="--item">Feed</span></a></li>
+                    <li><a href="https://plot.ly/products/cloud/" target="_blank"><span class="--item">Pricing</span></a></li>
+                    <li><a href="https://plot.ly/api/" onmouseover="dropDownMenu('api-menu')" onmouseout="hideDropDownMenu('api-menu')" target="_self"><span class="--item">API
+                    <div class="icon">
+                        <svg style="width:24px;height:24px" viewbox="0 0 24 24"></svg>
+                        <path fill="#000000" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                    </div></span></a></li>
+                    <li class="tablet"><a id="toolsignin" href="/settings" target="_self" class="headerbar-nav-item --product-header">
+                        Sign
+                        In</a></li>
+                    <li class="tablet"><a id="signup" href="/settings" target="_self" class="button --enterprise-quaternary">SIGN UP</a></li>
+                    <li class="tablet"><a href="https://plot.ly/products/cloud/" class="button">UPGRADE</a></li>
+                    <li class="tablet"><a href="https://plotly.typeform.com/to/seG7Vb" data-mode="1" target="_blank" class="typeform-share button --enterprise-quaternary">
+                        REQUEST
+                        DEMO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<section class="--breadcrumb-container"  data-spy="affix" >
+    <div class="--wrap">
+        <!--
+            Show this if page is too thin (hides breadcrumb list)
+            Toggles sidebar slide in/out (see main.js)
+        -->
+        <a class="toggle-sidebar">
+            <div class="icon">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="#000000" d="M5,13L9,17L7.6,18.42L1.18,12L7.6,5.58L9,7L5,11H21V13H5M21,6V8H11V6H21M21,16V18H11V16H21Z" />
+                </svg>
+            </div>
+            <span class="show">Show Sidebar</span>
+            <span class="hide">Hide Sidebar</span>
+        </a>
+
+        <!--
+            Breadcrumb List
+        -->
+        <ul class="--breadcrumb-list">
+            <li class="--breadcrumb-item">
+                <div class="icon">
+                    <svg style="width:24px;height:24px" viewbox="0 0 24 24">
+                        <path fill="#000000" d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z"></path>
+                    </svg>
+                </div>
+                <a href="https://help.plot.ly/"><span>Help</span></a>
+            </li>
+            <li class="--breadcrumb-item"><a href="/api/"><span>Open Source Graphing Libraries</span></a></li>
+            
+            <li class="--breadcrumb-item">
+                <a href="/python-next"  ><span>Python-next</span></a>
+            </li>
+            
+
+            
+            
+	    
+	    
+            <li class="--breadcrumb-item">
+		<a href="/python-next/plotly-fundamentals">
+                <span>Plotly Fundamentals</span>
+		</a>
+            </li>
+
+            
+
+            
+            
+
+            <li class="--breadcrumb-item">
+                <span>Images</span>
+            </li>
+            
+            
+        </ul>
+
+        <!--
+            Fork on GitHub :)
+        -->
+    
+     <div class="--fork">
+	    <a id="forklink" href= "https://github.com/plotly/documentation/tree/source-design-merge/_posts/python-next/html/" >
+                <div class="icon">
+                    <svg style="width:24px;height:24px" viewbox="0 0 24 24">
+                        <path fill="#000000" d="M2.6,10.59L8.38,4.8L10.07,6.5C9.83,7.35 10.22,8.28 11,8.73V14.27C10.4,14.61 10,15.26 10,16A2,2 0 0,0 12,18A2,2 0 0,0 14,16C14,15.26 13.6,14.61 13,14.27V9.41L15.07,11.5C15,11.65 15,11.82 15,12A2,2 0 0,0 17,14A2,2 0 0,0 19,12A2,2 0 0,0 17,10C16.82,10 16.65,10 16.5,10.07L13.93,7.5C14.19,6.57 13.71,5.55 12.78,5.16C12.35,5 11.9,4.96 11.5,5.07L9.8,3.38L10.59,2.6C11.37,1.81 12.63,1.81 13.41,2.6L21.4,10.59C22.19,11.37 22.19,12.63 21.4,13.41L13.41,21.4C12.63,22.19 11.37,22.19 10.59,21.4L2.6,13.41C1.81,12.63 1.81,11.37 2.6,10.59Z"></path>
+                    </svg>
+                </div>
+                <span>Fork on GitHub</span>
+            </a>
+    </div>
+</section>
+
+
+
+<main class="--page page--single --index">
+
+	<div class="--wrap">
+		<!-- aside - Main Sidebar-->
+		<aside class="--sidebar-container">
+			<div class="--sidebar-fixed reference" data-spy="affix"  data-offset-bottom="610" id="where">
+				<header class="--sidebar-header">Navigation</header>
+				<nav class="--sidebar-body watch"   id="where">
+					<ul class="--sidebar-list">
+
+						<li class="--sidebar-item">
+							
+
+						</li>
+					</ul>
+					
+					<button class="--btn back">
+						<div class="icon">
+							<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+								<path fill="#000000"
+									  d="M20,10V14H11L14.5,17.5L12.08,19.92L4.16,12L12.08,4.08L14.5,6.5L11,10H20Z"/>
+							</svg>
+						</div>
+						<span><a href="/python-next/">Back to Python-next
+                        </a></span>
+					</button>
+				</nav>
+			</div>
+		</aside>
+		<!-- Main-->
+		<section class="--page-body --tutorial-index --base">
+			<header class="--welcome">
+				<div class="--welcome-body">
+					<!--div.--wrap-inner-->
+					<div class="--title">
+						<div class="--category-img">
+
+							
+							
+							<img src="https://images.plot.ly/language-icons/api-home/python-logo.png" alt="">
+							
+							
+							
+							
+							
+							
+							
+							
+							
+
+						</div>
+						<div class="--body">
+							
+							
+							<h1>
+								Images in Python-next
+							</h1>
+							<p>How to add images to charts as background images or logos. </p>
+
+							
+								<nav class="lang-nav">
+		<ul class="lang-nav--list"></ul>
+		</nav>
+
+							
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<!-- Start Plotly Basics Section -->
+			<section class="tutorial-content">
+				
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Add-a-Background-Image">Add a Background Image<a class="anchor-link" href="#Add-a-Background-Image">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># Create figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="c1"># Add trace</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+    <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mf">1.23</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="p">)</span>
+
+<span class="c1"># Add images</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">images</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span>
+            <span class="n">source</span><span class="o">=</span><span class="s2">&quot;https://images.plot.ly/language-icons/api-home/python-logo.png&quot;</span><span class="p">,</span>
+            <span class="n">xref</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+            <span class="n">yref</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">sizex</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">sizey</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">sizing</span><span class="o">=</span><span class="s2">&quot;stretch&quot;</span><span class="p">,</span>
+            <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+            <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;below&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Set templates</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="f03f307c-4ae7-4e5b-8cfd-6b79cf4ed101" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("f03f307c-4ae7-4e5b-8cfd-6b79cf4ed101")) {
+                    Plotly.newPlot(
+                        'f03f307c-4ae7-4e5b-8cfd-6b79cf4ed101',
+                        [{"type": "scatter", "x": [0, 0.5, 1, 2, 2.2], "y": [1.23, 2.5, 0.42, 3, 1]}],
+                        {"images": [{"layer": "below", "opacity": 0.5, "sizex": 2, "sizey": 2, "sizing": "stretch", "source": "https://images.plot.ly/language-icons/api-home/python-logo.png", "x": 0, "xref": "x", "y": 3, "yref": "y"}], "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "white", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "white", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "white", "showlakes": true, "showland": true, "subunitcolor": "#C8D4E3"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "white", "polar": {"angularaxis": {"gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": ""}, "bgcolor": "white", "radialaxis": {"gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}, "yaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}, "zaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}, "baxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}, "bgcolor": "white", "caxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": "", "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": "", "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}}}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('f03f307c-4ae7-4e5b-8cfd-6b79cf4ed101');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Add-a-Logo">Add a Logo<a class="anchor-link" href="#Add-a-Logo">&#182;</a></h4><p>See more examples of <a href="https://plot.ly/python/logos/">adding logos to charts</a>!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+    <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-35.3&quot;</span><span class="p">,</span> <span class="s2">&quot;-15.9&quot;</span><span class="p">,</span> <span class="s2">&quot;-15.8&quot;</span><span class="p">,</span> <span class="s2">&quot;-15.6&quot;</span><span class="p">,</span> <span class="s2">&quot;-11.1&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;-9.6&quot;</span><span class="p">,</span> <span class="s2">&quot;-9.2&quot;</span><span class="p">,</span> <span class="s2">&quot;-3.5&quot;</span><span class="p">,</span> <span class="s2">&quot;-1.9&quot;</span><span class="p">,</span> <span class="s2">&quot;-0.9&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;1.0&quot;</span><span class="p">,</span> <span class="s2">&quot;1.4&quot;</span><span class="p">,</span> <span class="s2">&quot;1.7&quot;</span><span class="p">,</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span> <span class="s2">&quot;2.8&quot;</span><span class="p">,</span> <span class="s2">&quot;6.2&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;8.1&quot;</span><span class="p">,</span> <span class="s2">&quot;8.5&quot;</span><span class="p">,</span> <span class="s2">&quot;8.5&quot;</span><span class="p">,</span> <span class="s2">&quot;8.6&quot;</span><span class="p">,</span> <span class="s2">&quot;11.4&quot;</span><span class="p">,</span> <span class="s2">&quot;12.5&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;13.3&quot;</span><span class="p">,</span> <span class="s2">&quot;13.7&quot;</span><span class="p">,</span> <span class="s2">&quot;14.4&quot;</span><span class="p">,</span> <span class="s2">&quot;17.5&quot;</span><span class="p">,</span> <span class="s2">&quot;17.7&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;18.9&quot;</span><span class="p">,</span> <span class="s2">&quot;25.1&quot;</span><span class="p">,</span> <span class="s2">&quot;28.9&quot;</span><span class="p">,</span> <span class="s2">&quot;41.4&quot;</span><span class="p">],</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Designers, musicians, artists, etc.&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Secretaries and administrative assistants&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Waiters and servers&quot;</span><span class="p">,</span> <span class="s2">&quot;Archivists, curators, and librarians&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Sales and related&quot;</span><span class="p">,</span> <span class="s2">&quot;Childcare workers, home car workers, etc.&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Food preparation occupations&quot;</span><span class="p">,</span> <span class="s2">&quot;Janitors, maids, etc.&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Healthcare technicians, assistants. and aides&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Counselors, social and religious workers&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Physical, life and social scientists&quot;</span><span class="p">,</span> <span class="s2">&quot;Construction&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Factory assembly workers&quot;</span><span class="p">,</span> <span class="s2">&quot;Machinists, repairmen, etc.&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Media and communications workers&quot;</span><span class="p">,</span> <span class="s2">&quot;Teachers&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Mechanics, repairmen, etc.&quot;</span><span class="p">,</span> <span class="s2">&quot;Financial analysts and advisers&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Farming, fishing and forestry workers&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Truck drivers, heavy equipment operator, etc.&quot;</span><span class="p">,</span> <span class="s2">&quot;Accountants and auditors&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Human resources, management analysts, etc.&quot;</span><span class="p">,</span> <span class="s2">&quot;Managers&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Lawyers and judges&quot;</span><span class="p">,</span> <span class="s2">&quot;Engineers, architects and surveyors&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Nurses&quot;</span><span class="p">,</span> <span class="s2">&quot;Legal support workers&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Computer programmers and system admin.&quot;</span><span class="p">,</span> <span class="s2">&quot;Police officers and firefighters&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Chief executives&quot;</span><span class="p">,</span> <span class="s2">&quot;Doctors, dentists and surgeons&quot;</span><span class="p">],</span>
+        <span class="n">marker</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">bar</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;rgb(253, 240, 54)&quot;</span><span class="p">,</span>
+            <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;rgb(0, 0, 0)&quot;</span><span class="p">,</span>
+                      <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Add image</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">images</span><span class="o">=</span><span class="p">[</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">source</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/vox.png&quot;</span><span class="p">,</span>
+        <span class="n">xref</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="n">yref</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span>
+        <span class="n">sizex</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">sizey</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+        <span class="n">xanchor</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">yanchor</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span>
+    <span class="p">)],</span>
+<span class="p">)</span>
+
+<span class="c1"># update layout properties</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">autosize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span>
+    <span class="n">bargap</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+    <span class="n">bargroupgap</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">barmode</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
+    <span class="n">hovermode</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">125</span><span class="p">),</span>
+    <span class="n">title</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Moving Up, Moving Down&lt;br&gt;&quot;</span> <span class="o">+</span>
+           <span class="s2">&quot;&lt;i&gt;Percentile change in income between childhood and adulthood&lt;/i&gt;&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="0894dd93-1c2a-41cd-97e7-a097a5f3f0f5" class="plotly-graph-div" style="height:800px; width:700px;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("0894dd93-1c2a-41cd-97e7-a097a5f3f0f5")) {
+                    Plotly.newPlot(
+                        '0894dd93-1c2a-41cd-97e7-a097a5f3f0f5',
+                        [{"marker": {"color": "rgb(253, 240, 54)", "line": {"color": "rgb(0, 0, 0)", "width": 2}}, "orientation": "h", "type": "bar", "x": ["-35.3", "-15.9", "-15.8", "-15.6", "-11.1", "-9.6", "-9.2", "-3.5", "-1.9", "-0.9", "1.0", "1.4", "1.7", "2.0", "2.8", "6.2", "8.1", "8.5", "8.5", "8.6", "11.4", "12.5", "13.3", "13.7", "14.4", "17.5", "17.7", "18.9", "25.1", "28.9", "41.4"], "y": ["Designers, musicians, artists, etc.", "Secretaries and administrative assistants", "Waiters and servers", "Archivists, curators, and librarians", "Sales and related", "Childcare workers, home car workers, etc.", "Food preparation occupations", "Janitors, maids, etc.", "Healthcare technicians, assistants. and aides", "Counselors, social and religious workers", "Physical, life and social scientists", "Construction", "Factory assembly workers", "Machinists, repairmen, etc.", "Media and communications workers", "Teachers", "Mechanics, repairmen, etc.", "Financial analysts and advisers", "Farming, fishing and forestry workers", "Truck drivers, heavy equipment operator, etc.", "Accountants and auditors", "Human resources, management analysts, etc.", "Managers", "Lawyers and judges", "Engineers, architects and surveyors", "Nurses", "Legal support workers", "Computer programmers and system admin.", "Police officers and firefighters", "Chief executives", "Doctors, dentists and surgeons"]}],
+                        {"autosize": false, "bargap": 0.15, "bargroupgap": 0.1, "barmode": "stack", "height": 800, "hovermode": "x", "images": [{"sizex": 0.2, "sizey": 0.2, "source": "https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/vox.png", "x": 1, "xanchor": "right", "xref": "paper", "y": 1.05, "yanchor": "bottom", "yref": "paper"}], "margin": {"b": 75, "l": 300, "r": 20, "t": 125}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "Moving Up, Moving Down<br><i>Percentile change in income between childhood and adulthood</i>"}, "width": 700},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('0894dd93-1c2a-41cd-97e7-a097a5f3f0f5');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Label-Spectroscopy-Data-by-Adding-Multiple-Images">Label Spectroscopy Data by Adding Multiple Images<a class="anchor-link" href="#Label-Spectroscopy-Data-by-Adding-Multiple-Images">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="k">import</span> <span class="n">savgol_filter</span>
+
+<span class="c1"># Simulate spectroscopy data</span>
+<span class="k">def</span> <span class="nf">simulated_absorption</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">intensity</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sigma</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">intensity</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mu</span><span class="p">))]</span>
+    <span class="n">hists</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+    <span class="n">ys</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">hists</span><span class="p">]</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">savgol_filter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ys</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hists</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span>
+
+<span class="n">mus</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">290</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">260</span><span class="p">],</span> <span class="p">[</span><span class="mi">330</span><span class="p">,</span> <span class="mi">350</span><span class="p">]]</span>
+<span class="n">sigmas</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="n">intensities</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">300000</span><span class="p">,</span> <span class="mi">700000</span><span class="p">],</span> <span class="p">[</span><span class="mi">40000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">]]</span>
+<span class="n">simulated_absorptions</span> <span class="o">=</span> <span class="p">[</span><span class="n">simulated_absorption</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span>
+                         <span class="nb">zip</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">sigmas</span><span class="p">,</span> <span class="n">intensities</span><span class="p">)]</span>
+
+<span class="c1"># Create figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="c1"># Create traces from data</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Benzene&quot;</span><span class="p">,</span> <span class="s2">&quot;Naphthalene&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">simulated_absorptions</span><span class="p">,</span> <span class="n">names</span><span class="p">):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">n</span><span class="p">))</span>
+
+<span class="c1"># Add images</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">images</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span>
+        <span class="n">source</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/michaelbabyn/plot_data/master/benzene.png&quot;</span><span class="p">,</span>
+        <span class="n">xref</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+        <span class="n">yref</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="mf">0.65</span><span class="p">,</span>
+        <span class="n">sizex</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+        <span class="n">sizey</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+        <span class="n">xanchor</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+        <span class="n">yanchor</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span>
+    <span class="p">),</span> <span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span>
+        <span class="n">source</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/michaelbabyn/plot_data/master/naphthalene.png&quot;</span><span class="p">,</span>
+        <span class="n">xref</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+        <span class="n">yref</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+        <span class="n">sizex</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+        <span class="n">sizey</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+        <span class="n">xanchor</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+        <span class="n">yanchor</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Add annotations</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">annotations</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">Annotation</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="mf">93.0</span> <span class="o">/</span> <span class="mi">300</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="mf">0.07</span> <span class="o">/</span> <span class="mf">0.1</span><span class="p">,</span>
+            <span class="n">xref</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+            <span class="n">yref</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+            <span class="n">showarrow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">arrowhead</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
+            <span class="n">ay</span><span class="o">=-</span><span class="mi">40</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">Annotation</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="mf">156.0</span> <span class="o">/</span> <span class="mi">300</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="mf">0.04</span> <span class="o">/</span> <span class="mf">0.1</span><span class="p">,</span>
+            <span class="n">xref</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+            <span class="n">yref</span><span class="o">=</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span>
+            <span class="n">showarrow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">arrowhead</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span>
+            <span class="n">ay</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Configure axes</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Wavelength&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Absorption&quot;</span><span class="p">,</span> <span class="n">hoverformat</span><span class="o">=</span><span class="s2">&quot;.3f&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure other layout properties</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Absorption Frequencies of Benzene and Naphthalene&quot;</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/nicolas/miniconda2/envs/nb/lib/python3.6/site-packages/scipy/signal/_arraytools.py:45: FutureWarning:
+
+Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="2cd1f09a-9433-4880-a963-ceee2c434c86" class="plotly-graph-div" style="height:500px; width:900px;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("2cd1f09a-9433-4880-a963-ceee2c434c86")) {
+                    Plotly.newPlot(
+                        '2cd1f09a-9433-4880-a963-ceee2c434c86',
+                        [{"name": "Benzene", "type": "scatter", "x": [200.0, 200.3, 200.6, 200.9, 201.2, 201.5, 201.8, 202.1, 202.4, 202.7, 203.0, 203.3, 203.6, 203.9, 204.2, 204.5, 204.8, 205.1, 205.4, 205.7, 206.0, 206.3, 206.6, 206.9, 207.2, 207.5, 207.8, 208.1, 208.4, 208.7, 209.0, 209.3, 209.6, 209.9, 210.2, 210.5, 210.8, 211.1, 211.4, 211.7, 212.0, 212.3, 212.6, 212.9, 213.2, 213.5, 213.8, 214.1, 214.4, 214.7, 215.0, 215.3, 215.6, 215.9, 216.2, 216.5, 216.8, 217.1, 217.4, 217.7, 218.0, 218.3, 218.6, 218.9, 219.2, 219.5, 219.8, 220.1, 220.4, 220.7, 221.0, 221.3, 221.6, 221.9, 222.2, 222.5, 222.8, 223.1, 223.4, 223.7, 224.0, 224.3, 224.6, 224.9, 225.2, 225.5, 225.8, 226.1, 226.4, 226.7, 227.0, 227.3, 227.6, 227.9, 228.2, 228.5, 228.8, 229.1, 229.4, 229.7, 230.0, 230.3, 230.6, 230.9, 231.2, 231.5, 231.8, 232.1, 232.4, 232.7, 233.0, 233.3, 233.6, 233.9, 234.2, 234.5, 234.8, 235.1, 235.4, 235.7, 236.0, 236.3, 236.6, 236.9, 237.2, 237.5, 237.8, 238.1, 238.4, 238.7, 239.0, 239.3, 239.6, 239.9, 240.2, 240.5, 240.8, 241.1, 241.4, 241.7, 242.0, 242.3, 242.6, 242.9, 243.2, 243.5, 243.8, 244.1, 244.4, 244.7, 245.0, 245.3, 245.6, 245.9, 246.2, 246.5, 246.8, 247.1, 247.4, 247.7, 248.0, 248.3, 248.6, 248.9, 249.2, 249.5, 249.8, 250.1, 250.4, 250.7, 251.0, 251.3, 251.6, 251.9, 252.2, 252.5, 252.8, 253.1, 253.4, 253.7, 254.0, 254.3, 254.6, 254.9, 255.2, 255.5, 255.8, 256.1, 256.4, 256.7, 257.0, 257.3, 257.6, 257.9, 258.2, 258.5, 258.8, 259.1, 259.4, 259.7, 260.0, 260.3, 260.6, 260.9, 261.2, 261.5, 261.8, 262.1, 262.4, 262.7, 263.0, 263.3, 263.6, 263.9, 264.2, 264.5, 264.8, 265.1, 265.4, 265.7, 266.0, 266.3, 266.6, 266.9, 267.2, 267.5, 267.8, 268.1, 268.4, 268.7, 269.0, 269.3, 269.6, 269.9, 270.2, 270.5, 270.8, 271.1, 271.4, 271.7, 272.0, 272.3, 272.6, 272.9, 273.2, 273.5, 273.8, 274.1, 274.4, 274.7, 275.0, 275.3, 275.6, 275.9, 276.2, 276.5, 276.8, 277.1, 277.4, 277.7, 278.0, 278.3, 278.6, 278.9, 279.2, 279.5, 279.8, 280.1, 280.4, 280.7, 281.0, 281.3, 281.6, 281.9, 282.2, 282.5, 282.8, 283.1, 283.4, 283.7, 284.0, 284.3, 284.6, 284.9, 285.2, 285.5, 285.8, 286.1, 286.4, 286.7, 287.0, 287.3, 287.6, 287.9, 288.2, 288.5, 288.8, 289.1, 289.4, 289.7, 290.0, 290.3, 290.6, 290.9, 291.2, 291.5, 291.8, 292.1, 292.4, 292.7, 293.0, 293.3, 293.6, 293.9, 294.2, 294.5, 294.8, 295.1, 295.4, 295.7, 296.0, 296.3, 296.6, 296.9, 297.2, 297.5, 297.8, 298.1, 298.4, 298.7, 299.0, 299.3, 299.6, 299.9, 300.2, 300.5, 300.8, 301.1, 301.4, 301.7, 302.0, 302.3, 302.6, 302.9, 303.2, 303.5, 303.8, 304.1, 304.4, 304.7, 305.0, 305.3, 305.6, 305.9, 306.2, 306.5, 306.8, 307.1, 307.4, 307.7, 308.0, 308.3, 308.6, 308.9, 309.2, 309.5, 309.8, 310.1, 310.4, 310.7, 311.0, 311.3, 311.6, 311.9, 312.2, 312.5, 312.8, 313.1, 313.4, 313.7, 314.0, 314.3, 314.6, 314.9, 315.2, 315.5, 315.8, 316.1, 316.4, 316.7, 317.0, 317.3, 317.6, 317.9, 318.2, 318.5, 318.8, 319.1, 319.4, 319.7, 320.0, 320.3, 320.6, 320.9, 321.2, 321.5, 321.8, 322.1, 322.4, 322.7, 323.0, 323.3, 323.6, 323.9, 324.2, 324.5, 324.8, 325.1, 325.4, 325.7, 326.0, 326.3, 326.6, 326.9, 327.2, 327.5, 327.8, 328.1, 328.4, 328.7, 329.0, 329.29999999999995, 329.6, 329.9, 330.2, 330.5, 330.79999999999995, 331.1, 331.4, 331.7, 332.0, 332.29999999999995, 332.6, 332.9, 333.2, 333.5, 333.79999999999995, 334.1, 334.4, 334.7, 335.0, 335.29999999999995, 335.6, 335.9, 336.2, 336.5, 336.79999999999995, 337.1, 337.4, 337.7, 338.0, 338.29999999999995, 338.6, 338.9, 339.2, 339.5, 339.79999999999995, 340.1, 340.4, 340.7, 341.0, 341.29999999999995, 341.6, 341.9, 342.2, 342.5, 342.79999999999995, 343.1, 343.4, 343.7, 344.0, 344.29999999999995, 344.6, 344.9, 345.2, 345.5, 345.79999999999995, 346.1, 346.4, 346.7, 347.0, 347.29999999999995, 347.6, 347.9, 348.2, 348.5, 348.79999999999995, 349.1, 349.4, 349.7, 350.0, 350.29999999999995, 350.6, 350.9, 351.2, 351.5, 351.79999999999995, 352.1, 352.4, 352.7, 353.0, 353.29999999999995, 353.6, 353.9, 354.2, 354.5, 354.79999999999995, 355.1, 355.4, 355.7, 356.0, 356.29999999999995, 356.6, 356.9, 357.2, 357.5, 357.79999999999995, 358.1, 358.4, 358.7, 359.0, 359.29999999999995, 359.6, 359.9, 360.2, 360.5, 360.79999999999995, 361.1, 361.4, 361.7, 362.0, 362.29999999999995, 362.6, 362.9, 363.2, 363.5, 363.79999999999995, 364.1, 364.4, 364.7, 365.0, 365.29999999999995, 365.6, 365.9, 366.2, 366.5, 366.79999999999995, 367.1, 367.4, 367.7, 368.0, 368.29999999999995, 368.6, 368.9, 369.2, 369.5, 369.79999999999995, 370.1, 370.4, 370.7, 371.0, 371.29999999999995, 371.6, 371.9, 372.2, 372.5, 372.79999999999995, 373.1, 373.4, 373.7, 374.0, 374.29999999999995, 374.6, 374.9, 375.2, 375.5, 375.79999999999995, 376.1, 376.4, 376.7, 377.0, 377.29999999999995, 377.6, 377.9, 378.2, 378.5, 378.79999999999995, 379.1, 379.4, 379.7, 380.0, 380.29999999999995, 380.6, 380.9, 381.2, 381.5, 381.79999999999995, 382.1, 382.4, 382.7, 383.0, 383.29999999999995, 383.6, 383.9, 384.2, 384.5, 384.79999999999995, 385.1, 385.4, 385.7, 386.0, 386.29999999999995, 386.6, 386.9, 387.2, 387.5, 387.79999999999995, 388.1, 388.4, 388.7, 389.0, 389.29999999999995, 389.6, 389.9, 390.2, 390.5, 390.79999999999995, 391.1, 391.4, 391.7, 392.0, 392.29999999999995, 392.6, 392.9, 393.2, 393.5, 393.79999999999995, 394.1, 394.4, 394.7, 395.0, 395.29999999999995, 395.6, 395.9, 396.2, 396.5, 396.79999999999995, 397.1, 397.4, 397.7, 398.0, 398.29999999999995, 398.6, 398.9, 399.2, 399.5, 399.79999999999995, 400.1, 400.4, 400.7, 401.0, 401.29999999999995, 401.6, 401.9, 402.2, 402.5, 402.79999999999995, 403.1, 403.4, 403.7, 404.0, 404.29999999999995, 404.6, 404.9, 405.2, 405.5, 405.79999999999995, 406.1, 406.4, 406.7, 407.0, 407.29999999999995, 407.6, 407.9, 408.2, 408.5, 408.79999999999995, 409.1, 409.4, 409.7, 410.0, 410.29999999999995, 410.6, 410.9, 411.2, 411.5, 411.79999999999995, 412.1, 412.4, 412.7, 413.0, 413.29999999999995, 413.6, 413.9, 414.2, 414.5, 414.79999999999995, 415.1, 415.4, 415.7, 416.0, 416.29999999999995, 416.6, 416.9, 417.2, 417.5, 417.79999999999995, 418.1, 418.4, 418.7, 419.0, 419.29999999999995, 419.6, 419.9, 420.2, 420.5, 420.79999999999995, 421.1, 421.4, 421.7, 422.0, 422.29999999999995, 422.6, 422.9, 423.2, 423.5, 423.79999999999995, 424.1, 424.4, 424.7, 425.0, 425.29999999999995, 425.6, 425.9, 426.2, 426.5, 426.79999999999995, 427.1, 427.4, 427.7, 428.0, 428.29999999999995, 428.6, 428.9, 429.2, 429.5, 429.79999999999995, 430.1, 430.4, 430.7, 431.0, 431.29999999999995, 431.6, 431.9, 432.2, 432.5, 432.79999999999995, 433.1, 433.4, 433.7, 434.0, 434.29999999999995, 434.6, 434.9, 435.2, 435.5, 435.79999999999995, 436.1, 436.4, 436.7, 437.0, 437.29999999999995, 437.6, 437.9, 438.2, 438.5, 438.79999999999995, 439.1, 439.4, 439.7, 440.0, 440.29999999999995, 440.6, 440.9, 441.2, 441.5, 441.79999999999995, 442.1, 442.4, 442.7, 443.0, 443.29999999999995, 443.6, 443.9, 444.2, 444.5, 444.79999999999995, 445.1, 445.4, 445.7, 446.0, 446.29999999999995, 446.6, 446.9, 447.2, 447.5, 447.79999999999995, 448.1, 448.4, 448.7, 449.0, 449.29999999999995, 449.6, 449.9, 450.2, 450.5, 450.79999999999995, 451.1, 451.4, 451.7, 452.0, 452.29999999999995, 452.6, 452.9, 453.2, 453.5, 453.79999999999995, 454.1, 454.4, 454.7, 455.0, 455.29999999999995, 455.6, 455.9, 456.2, 456.5, 456.8, 457.09999999999997, 457.4, 457.7, 458.0, 458.3, 458.59999999999997, 458.9, 459.2, 459.5, 459.8, 460.09999999999997, 460.4, 460.7, 461.0, 461.3, 461.59999999999997, 461.9, 462.2, 462.5, 462.8, 463.09999999999997, 463.4, 463.7, 464.0, 464.3, 464.59999999999997, 464.9, 465.2, 465.5, 465.8, 466.09999999999997, 466.4, 466.7, 467.0, 467.3, 467.59999999999997, 467.9, 468.2, 468.5, 468.8, 469.09999999999997, 469.4, 469.7, 470.0, 470.3, 470.59999999999997, 470.9, 471.2, 471.5, 471.8, 472.09999999999997, 472.4, 472.7, 473.0, 473.3, 473.59999999999997, 473.9, 474.2, 474.5, 474.8, 475.09999999999997, 475.4, 475.7, 476.0, 476.3, 476.59999999999997, 476.9, 477.2, 477.5, 477.8, 478.09999999999997, 478.4, 478.7, 479.0, 479.3, 479.59999999999997, 479.9, 480.2, 480.5, 480.8, 481.09999999999997, 481.4, 481.7, 482.0, 482.3, 482.59999999999997, 482.9, 483.2, 483.5, 483.8, 484.09999999999997, 484.4, 484.7, 485.0, 485.3, 485.59999999999997, 485.9, 486.2, 486.5, 486.8, 487.09999999999997, 487.4, 487.7, 488.0, 488.3, 488.59999999999997, 488.9, 489.2, 489.5, 489.8, 490.09999999999997, 490.4, 490.7, 491.0, 491.3, 491.59999999999997, 491.9, 492.2, 492.5, 492.8, 493.09999999999997, 493.4, 493.7, 494.0, 494.3, 494.59999999999997, 494.9, 495.2, 495.5, 495.8, 496.09999999999997, 496.4, 496.7, 497.0, 497.3, 497.59999999999997, 497.9, 498.2, 498.5, 498.8, 499.09999999999997, 499.4, 499.7, 500.0], "y": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -7.184723010020954e-07, -8.886367933447307e-07, -9.739614390777637e-07, -6.200580789350223e-07, -5.934633841611081e-07, -3.512715934724162e-07, 6.184651675292124e-08, 9.010337995024134e-08, -1.719651748012329e-07, -6.346713096572126e-07, -1.3546672650476304e-07, 4.432449128982985e-08, 1.0720986330742563e-06, 1.6713796067171749e-06, 1.577467090796659e-06, -4.6235984976763584e-07, -6.623048596957706e-07, 1.0096288031626045e-06, 1.99079297207506e-06, 2.4605633227301716e-06, 7.924387958422842e-07, -9.439731504396459e-07, -1.3435861422199457e-08, 9.729225838134414e-07, 1.7867617981061024e-06, 4.0807619934113154e-06, 3.7263738341445667e-06, -5.64029151663516e-07, -3.8115599658416327e-06, -9.604216921291117e-06, -1.405294144942482e-05, -1.5449786238216996e-05, -8.467293719704509e-06, -2.0679452897247947e-06, 5.880405596797839e-06, 4.9395490121544796e-06, 2.238961643385952e-05, 3.415839218448769e-05, 4.521312808324259e-05, 6.337169479540731e-05, 7.93467955124299e-05, 9.695234493873407e-05, 0.00012562204921820138, 0.0001557214953698378, 0.00019453575982221228, 0.0002469389437058368, 0.0003020700922572847, 0.00035160444269919186, 0.0004212390495998348, 0.0005081688652307176, 0.0006028957051646083, 0.0007027168142880306, 0.0008182774117544934, 0.000962091617338432, 0.001108503376625953, 0.00128761580639071, 0.00149825714715115, 0.0017118295834122246, 0.001993988975668081, 0.0022812004595896946, 0.002603119682359789, 0.0029747972327667568, 0.003405093299591531, 0.0038544264583972388, 0.004353012784153134, 0.00492498848602114, 0.005525639086444831, 0.0061571854502090965, 0.006875293667069527, 0.007676478031328165, 0.008541829922772054, 0.009452493079493042, 0.010406058049847702, 0.011428791735145319, 0.012591179079948967, 0.013831976380587592, 0.015167216913672692, 0.016487191607158606, 0.017926453064174043, 0.019411941572010788, 0.020925992020207757, 0.02253575684415293, 0.024177987211000628, 0.025902630035246576, 0.027670271632950532, 0.029526627107060048, 0.03137490485817385, 0.0331551837146299, 0.035108120385320594, 0.03703768295107143, 0.03902156144101935, 0.04095608398660256, 0.04291432969249456, 0.04486978877302474, 0.04678352604098772, 0.048650290637077556, 0.05043644428931172, 0.0522002865162852, 0.05393951209816551, 0.055565878383295214, 0.05707065995705034, 0.05849218309893644, 0.05979998836482474, 0.06101022877671019, 0.06212599541380402, 0.06305063096606313, 0.06383138347126252, 0.06446597388872322, 0.06504807607468252, 0.06538521508113505, 0.06554624983638437, 0.0656129121398588, 0.06552774456904191, 0.06533447164167934, 0.06497486801344253, 0.06442016424994704, 0.06370167449617634, 0.06278220011538613, 0.06182443387582738, 0.06066889383384358, 0.059391685210236835, 0.05803588725511933, 0.05645319486085582, 0.05474127572811975, 0.052912056192376974, 0.05100842123780616, 0.04900312016716166, 0.04698357452090025, 0.04507388684927254, 0.043088120620794736, 0.04115783750503237, 0.03923025444335943, 0.03744097238238148, 0.03570502328074873, 0.034059282344933786, 0.032517316332122695, 0.031153571826801098, 0.02996563078945576, 0.02887140052233826, 0.027899098481402984, 0.027047883055372018, 0.02643819870808113, 0.025963880387591662, 0.025641216097825794, 0.02543447884440669, 0.02533671854710005, 0.025423532842025524, 0.025664074237984003, 0.026004180699871527, 0.026415821142368456, 0.0269966908996987, 0.027699275987139206, 0.028410659486100883, 0.02915146149621662, 0.029937971752834674, 0.030793390110238184, 0.03162522354434056, 0.03242807741826664, 0.03325926523845056, 0.03400109765447474, 0.034711719949555214, 0.03532576444164857, 0.03579965676222282, 0.03627209676313706, 0.03678046432675139, 0.03719670807543969, 0.0376368060187141, 0.038016776265899464, 0.03836048464676046, 0.038686141255230476, 0.03896332903247483, 0.039229860647957145, 0.0394059260459739, 0.039564679959861127, 0.039712878273175704, 0.039843937136792594, 0.03995540609891388, 0.04000311241037528, 0.03997116615659125, 0.03993244843642143, 0.039843065744996645, 0.039753800236445834, 0.03960969771389759, 0.03942303536886881, 0.03921645027311748, 0.038967663967722874, 0.038696783080790054, 0.03838282086603373, 0.038003007693764475, 0.037659753084883035, 0.037271433765707, 0.036846802507383404, 0.03636205227935464, 0.03584247484412202, 0.03532466367061026, 0.03475563340044533, 0.03417859023185389, 0.033595656961682915, 0.033022706051749534, 0.03241017911942671, 0.03177302466865889, 0.031104052366618163, 0.030420323956627655, 0.029748747867751432, 0.02908999707042993, 0.02836730265386124, 0.02770611490986031, 0.02697319296321171, 0.02624373082013633, 0.025514417233363777, 0.024794316838390822, 0.02405937348716858, 0.02332559136836088, 0.022636932759055567, 0.02194447817261337, 0.021237782750432824, 0.02051868007205634, 0.019802568465757488, 0.019081669191086163, 0.018405001880329144, 0.017722809313961734, 0.017080307251834185, 0.016425069239704455, 0.015759374733794337, 0.015112003764812398, 0.014476853889163248, 0.01380823230465977, 0.013109432805803494, 0.012427384432546889, 0.0117271594164965, 0.011037643543826754, 0.010321475216030636, 0.00967774875908803, 0.009018328731205108, 0.008392793876572067, 0.007844916569534037, 0.007307348031058093, 0.0069207392909609805, 0.00656787527088198, 0.006240176272961753, 0.006127897627046998, 0.00604775202109329, 0.0060676749795869275, 0.006260832663272173, 0.006669141219907497, 0.007181856392803821, 0.007937120376315368, 0.00890517869349466, 0.010171216852726393, 0.011638368457030718, 0.01330362747481345, 0.015307435087129638, 0.01760029586598048, 0.020121551468007745, 0.022811175381625096, 0.025732846317986516, 0.028972340686352575, 0.032355254841586994, 0.03594151390300237, 0.039831140725414535, 0.04384378110073185, 0.04803980997259785, 0.052204173497143284, 0.05644167180900385, 0.06062124729118884, 0.06476864610149156, 0.06876931948747451, 0.07271534389226275, 0.07639091874282374, 0.07986751894353085, 0.0831121602164192, 0.08603379292290765, 0.08876275579214304, 0.09091107814477639, 0.09272423898658172, 0.0941402504472328, 0.09508481027386889, 0.09572482074553004, 0.09569485870530142, 0.09524463690970236, 0.09440919470018162, 0.09297696961764475, 0.09116076035895096, 0.08899943860262051, 0.08646991579039752, 0.08355202670274062, 0.08041221548351951, 0.07702617769827555, 0.07337804150850548, 0.06949699666943421, 0.06548319589278556, 0.0614435621100437, 0.05724766641942277, 0.05301464287272898, 0.04877985077883268, 0.044707459604115485, 0.04073718894076516, 0.03686782000378387, 0.033250732289078114, 0.029832401064620602, 0.026517349506233422, 0.023432342888725744, 0.02047752228864113, 0.017832885378944383, 0.01537396774146718, 0.013181449161540466, 0.011184874267348223, 0.009420800791192886, 0.007774245531364601, 0.00642052591008948, 0.0052465087191123526, 0.004247109385226647, 0.003413749872740539, 0.0025799933097722903, 0.002007814477071505, 0.0015333131795411598, 0.0011342597844584779, 0.0008220958281651422, 0.000486794695189532, 0.0002889902119056926, 0.00012437009011023948, -2.0618991520810495e-05, -0.00011313736367619033, -0.00013612369857406482, -0.0001589542051822501, -0.0001711674032151022, -0.00015786735480437957, -0.00014785694547463725, -0.00016403711622089902, -0.0001564434997787392, -0.00016537308409120515, -0.0001559436026253937, -0.00014387709095593562, -0.00011658137664944709, -0.00011003097866399887, -9.663307008742117e-05, -8.627900743612697e-05, -5.371899796176718e-05, -4.715467931577046e-05, -4.3718561642557925e-05, -2.756062239897e-05, -1.8782087641985714e-05, -1.3521532353069745e-05, -7.889897963636217e-06, -6.465627395860426e-06, -5.163318436149488e-06, -4.222946650626806e-06, -2.523171666677136e-06, -2.7720813880769906e-06, -1.4238550256702822e-06, -9.029729959964688e-07, -1.1718287384765177e-07, -4.278005979651058e-07, -7.571177168454834e-07, -1.1051342304887851e-06, -9.599022644970168e-08, 2.784132109146365e-08, -4.3631921113486094e-09, -3.864541584337457e-08, -7.500535010461425e-08, -1.1344299489506761e-07, -1.5395835021473474e-07, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, {"name": "Naphthalene", "type": "scatter", "x": [200.0, 200.3, 200.6, 200.9, 201.2, 201.5, 201.8, 202.1, 202.4, 202.7, 203.0, 203.3, 203.6, 203.9, 204.2, 204.5, 204.8, 205.1, 205.4, 205.7, 206.0, 206.3, 206.6, 206.9, 207.2, 207.5, 207.8, 208.1, 208.4, 208.7, 209.0, 209.3, 209.6, 209.9, 210.2, 210.5, 210.8, 211.1, 211.4, 211.7, 212.0, 212.3, 212.6, 212.9, 213.2, 213.5, 213.8, 214.1, 214.4, 214.7, 215.0, 215.3, 215.6, 215.9, 216.2, 216.5, 216.8, 217.1, 217.4, 217.7, 218.0, 218.3, 218.6, 218.9, 219.2, 219.5, 219.8, 220.1, 220.4, 220.7, 221.0, 221.3, 221.6, 221.9, 222.2, 222.5, 222.8, 223.1, 223.4, 223.7, 224.0, 224.3, 224.6, 224.9, 225.2, 225.5, 225.8, 226.1, 226.4, 226.7, 227.0, 227.3, 227.6, 227.9, 228.2, 228.5, 228.8, 229.1, 229.4, 229.7, 230.0, 230.3, 230.6, 230.9, 231.2, 231.5, 231.8, 232.1, 232.4, 232.7, 233.0, 233.3, 233.6, 233.9, 234.2, 234.5, 234.8, 235.1, 235.4, 235.7, 236.0, 236.3, 236.6, 236.9, 237.2, 237.5, 237.8, 238.1, 238.4, 238.7, 239.0, 239.3, 239.6, 239.9, 240.2, 240.5, 240.8, 241.1, 241.4, 241.7, 242.0, 242.3, 242.6, 242.9, 243.2, 243.5, 243.8, 244.1, 244.4, 244.7, 245.0, 245.3, 245.6, 245.9, 246.2, 246.5, 246.8, 247.1, 247.4, 247.7, 248.0, 248.3, 248.6, 248.9, 249.2, 249.5, 249.8, 250.1, 250.4, 250.7, 251.0, 251.3, 251.6, 251.9, 252.2, 252.5, 252.8, 253.1, 253.4, 253.7, 254.0, 254.3, 254.6, 254.9, 255.2, 255.5, 255.8, 256.1, 256.4, 256.7, 257.0, 257.3, 257.6, 257.9, 258.2, 258.5, 258.8, 259.1, 259.4, 259.7, 260.0, 260.3, 260.6, 260.9, 261.2, 261.5, 261.8, 262.1, 262.4, 262.7, 263.0, 263.3, 263.6, 263.9, 264.2, 264.5, 264.8, 265.1, 265.4, 265.7, 266.0, 266.3, 266.6, 266.9, 267.2, 267.5, 267.8, 268.1, 268.4, 268.7, 269.0, 269.3, 269.6, 269.9, 270.2, 270.5, 270.8, 271.1, 271.4, 271.7, 272.0, 272.3, 272.6, 272.9, 273.2, 273.5, 273.8, 274.1, 274.4, 274.7, 275.0, 275.3, 275.6, 275.9, 276.2, 276.5, 276.8, 277.1, 277.4, 277.7, 278.0, 278.3, 278.6, 278.9, 279.2, 279.5, 279.8, 280.1, 280.4, 280.7, 281.0, 281.3, 281.6, 281.9, 282.2, 282.5, 282.8, 283.1, 283.4, 283.7, 284.0, 284.3, 284.6, 284.9, 285.2, 285.5, 285.8, 286.1, 286.4, 286.7, 287.0, 287.3, 287.6, 287.9, 288.2, 288.5, 288.8, 289.1, 289.4, 289.7, 290.0, 290.3, 290.6, 290.9, 291.2, 291.5, 291.8, 292.1, 292.4, 292.7, 293.0, 293.3, 293.6, 293.9, 294.2, 294.5, 294.8, 295.1, 295.4, 295.7, 296.0, 296.3, 296.6, 296.9, 297.2, 297.5, 297.8, 298.1, 298.4, 298.7, 299.0, 299.3, 299.6, 299.9, 300.2, 300.5, 300.8, 301.1, 301.4, 301.7, 302.0, 302.3, 302.6, 302.9, 303.2, 303.5, 303.8, 304.1, 304.4, 304.7, 305.0, 305.3, 305.6, 305.9, 306.2, 306.5, 306.8, 307.1, 307.4, 307.7, 308.0, 308.3, 308.6, 308.9, 309.2, 309.5, 309.8, 310.1, 310.4, 310.7, 311.0, 311.3, 311.6, 311.9, 312.2, 312.5, 312.8, 313.1, 313.4, 313.7, 314.0, 314.3, 314.6, 314.9, 315.2, 315.5, 315.8, 316.1, 316.4, 316.7, 317.0, 317.3, 317.6, 317.9, 318.2, 318.5, 318.8, 319.1, 319.4, 319.7, 320.0, 320.3, 320.6, 320.9, 321.2, 321.5, 321.8, 322.1, 322.4, 322.7, 323.0, 323.3, 323.6, 323.9, 324.2, 324.5, 324.8, 325.1, 325.4, 325.7, 326.0, 326.3, 326.6, 326.9, 327.2, 327.5, 327.8, 328.1, 328.4, 328.7, 329.0, 329.29999999999995, 329.6, 329.9, 330.2, 330.5, 330.79999999999995, 331.1, 331.4, 331.7, 332.0, 332.29999999999995, 332.6, 332.9, 333.2, 333.5, 333.79999999999995, 334.1, 334.4, 334.7, 335.0, 335.29999999999995, 335.6, 335.9, 336.2, 336.5, 336.79999999999995, 337.1, 337.4, 337.7, 338.0, 338.29999999999995, 338.6, 338.9, 339.2, 339.5, 339.79999999999995, 340.1, 340.4, 340.7, 341.0, 341.29999999999995, 341.6, 341.9, 342.2, 342.5, 342.79999999999995, 343.1, 343.4, 343.7, 344.0, 344.29999999999995, 344.6, 344.9, 345.2, 345.5, 345.79999999999995, 346.1, 346.4, 346.7, 347.0, 347.29999999999995, 347.6, 347.9, 348.2, 348.5, 348.79999999999995, 349.1, 349.4, 349.7, 350.0, 350.29999999999995, 350.6, 350.9, 351.2, 351.5, 351.79999999999995, 352.1, 352.4, 352.7, 353.0, 353.29999999999995, 353.6, 353.9, 354.2, 354.5, 354.79999999999995, 355.1, 355.4, 355.7, 356.0, 356.29999999999995, 356.6, 356.9, 357.2, 357.5, 357.79999999999995, 358.1, 358.4, 358.7, 359.0, 359.29999999999995, 359.6, 359.9, 360.2, 360.5, 360.79999999999995, 361.1, 361.4, 361.7, 362.0, 362.29999999999995, 362.6, 362.9, 363.2, 363.5, 363.79999999999995, 364.1, 364.4, 364.7, 365.0, 365.29999999999995, 365.6, 365.9, 366.2, 366.5, 366.79999999999995, 367.1, 367.4, 367.7, 368.0, 368.29999999999995, 368.6, 368.9, 369.2, 369.5, 369.79999999999995, 370.1, 370.4, 370.7, 371.0, 371.29999999999995, 371.6, 371.9, 372.2, 372.5, 372.79999999999995, 373.1, 373.4, 373.7, 374.0, 374.29999999999995, 374.6, 374.9, 375.2, 375.5, 375.79999999999995, 376.1, 376.4, 376.7, 377.0, 377.29999999999995, 377.6, 377.9, 378.2, 378.5, 378.79999999999995, 379.1, 379.4, 379.7, 380.0, 380.29999999999995, 380.6, 380.9, 381.2, 381.5, 381.79999999999995, 382.1, 382.4, 382.7, 383.0, 383.29999999999995, 383.6, 383.9, 384.2, 384.5, 384.79999999999995, 385.1, 385.4, 385.7, 386.0, 386.29999999999995, 386.6, 386.9, 387.2, 387.5, 387.79999999999995, 388.1, 388.4, 388.7, 389.0, 389.29999999999995, 389.6, 389.9, 390.2, 390.5, 390.79999999999995, 391.1, 391.4, 391.7, 392.0, 392.29999999999995, 392.6, 392.9, 393.2, 393.5, 393.79999999999995, 394.1, 394.4, 394.7, 395.0, 395.29999999999995, 395.6, 395.9, 396.2, 396.5, 396.79999999999995, 397.1, 397.4, 397.7, 398.0, 398.29999999999995, 398.6, 398.9, 399.2, 399.5, 399.79999999999995, 400.1, 400.4, 400.7, 401.0, 401.29999999999995, 401.6, 401.9, 402.2, 402.5, 402.79999999999995, 403.1, 403.4, 403.7, 404.0, 404.29999999999995, 404.6, 404.9, 405.2, 405.5, 405.79999999999995, 406.1, 406.4, 406.7, 407.0, 407.29999999999995, 407.6, 407.9, 408.2, 408.5, 408.79999999999995, 409.1, 409.4, 409.7, 410.0, 410.29999999999995, 410.6, 410.9, 411.2, 411.5, 411.79999999999995, 412.1, 412.4, 412.7, 413.0, 413.29999999999995, 413.6, 413.9, 414.2, 414.5, 414.79999999999995, 415.1, 415.4, 415.7, 416.0, 416.29999999999995, 416.6, 416.9, 417.2, 417.5, 417.79999999999995, 418.1, 418.4, 418.7, 419.0, 419.29999999999995, 419.6, 419.9, 420.2, 420.5, 420.79999999999995, 421.1, 421.4, 421.7, 422.0, 422.29999999999995, 422.6, 422.9, 423.2, 423.5, 423.79999999999995, 424.1, 424.4, 424.7, 425.0, 425.29999999999995, 425.6, 425.9, 426.2, 426.5, 426.79999999999995, 427.1, 427.4, 427.7, 428.0, 428.29999999999995, 428.6, 428.9, 429.2, 429.5, 429.79999999999995, 430.1, 430.4, 430.7, 431.0, 431.29999999999995, 431.6, 431.9, 432.2, 432.5, 432.79999999999995, 433.1, 433.4, 433.7, 434.0, 434.29999999999995, 434.6, 434.9, 435.2, 435.5, 435.79999999999995, 436.1, 436.4, 436.7, 437.0, 437.29999999999995, 437.6, 437.9, 438.2, 438.5, 438.79999999999995, 439.1, 439.4, 439.7, 440.0, 440.29999999999995, 440.6, 440.9, 441.2, 441.5, 441.79999999999995, 442.1, 442.4, 442.7, 443.0, 443.29999999999995, 443.6, 443.9, 444.2, 444.5, 444.79999999999995, 445.1, 445.4, 445.7, 446.0, 446.29999999999995, 446.6, 446.9, 447.2, 447.5, 447.79999999999995, 448.1, 448.4, 448.7, 449.0, 449.29999999999995, 449.6, 449.9, 450.2, 450.5, 450.79999999999995, 451.1, 451.4, 451.7, 452.0, 452.29999999999995, 452.6, 452.9, 453.2, 453.5, 453.79999999999995, 454.1, 454.4, 454.7, 455.0, 455.29999999999995, 455.6, 455.9, 456.2, 456.5, 456.8, 457.09999999999997, 457.4, 457.7, 458.0, 458.3, 458.59999999999997, 458.9, 459.2, 459.5, 459.8, 460.09999999999997, 460.4, 460.7, 461.0, 461.3, 461.59999999999997, 461.9, 462.2, 462.5, 462.8, 463.09999999999997, 463.4, 463.7, 464.0, 464.3, 464.59999999999997, 464.9, 465.2, 465.5, 465.8, 466.09999999999997, 466.4, 466.7, 467.0, 467.3, 467.59999999999997, 467.9, 468.2, 468.5, 468.8, 469.09999999999997, 469.4, 469.7, 470.0, 470.3, 470.59999999999997, 470.9, 471.2, 471.5, 471.8, 472.09999999999997, 472.4, 472.7, 473.0, 473.3, 473.59999999999997, 473.9, 474.2, 474.5, 474.8, 475.09999999999997, 475.4, 475.7, 476.0, 476.3, 476.59999999999997, 476.9, 477.2, 477.5, 477.8, 478.09999999999997, 478.4, 478.7, 479.0, 479.3, 479.59999999999997, 479.9, 480.2, 480.5, 480.8, 481.09999999999997, 481.4, 481.7, 482.0, 482.3, 482.59999999999997, 482.9, 483.2, 483.5, 483.8, 484.09999999999997, 484.4, 484.7, 485.0, 485.3, 485.59999999999997, 485.9, 486.2, 486.5, 486.8, 487.09999999999997, 487.4, 487.7, 488.0, 488.3, 488.59999999999997, 488.9, 489.2, 489.5, 489.8, 490.09999999999997, 490.4, 490.7, 491.0, 491.3, 491.59999999999997, 491.9, 492.2, 492.5, 492.8, 493.09999999999997, 493.4, 493.7, 494.0, 494.3, 494.59999999999997, 494.9, 495.2, 495.5, 495.8, 496.09999999999997, 496.4, 496.7, 497.0, 497.3, 497.59999999999997, 497.9, 498.2, 498.5, 498.8, 499.09999999999997, 499.4, 499.7, 500.0], "y": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -2.694271128757858e-06, -1.985252410663683e-06, -9.395407013104324e-06, -9.326323138007963e-06, -1.6776473668138007e-05, -1.3489535610921396e-05, -9.820818243961801e-06, -1.388949488779403e-05, -1.2827784807365368e-05, -1.2878688715332712e-05, -8.053725438865258e-06, -9.984437948136192e-06, -2.2041392149162424e-05, -1.664921389821979e-05, -1.859810637462709e-05, 7.02473929927065e-06, 5.650333784197815e-06, -7.65740215541399e-06, -1.2242389865754503e-05, -8.122809313965614e-06, -7.417426589294759e-07, -2.1103305845219428e-05, -1.637287839782823e-05, -1.835085882163593e-05, 1.6354698430697794e-05, 4.810055703419527e-05, 0.00010049158631122415, 0.0001541224893465608, 0.00022142109167069674, 0.00022344997600242625, 0.0002370376834358723, 0.00031274633855464507, 0.00038682970461193905, 0.0005296878863243664, 0.0007037174396788735, 0.0008421033494771866, 0.0010415194089329891, 0.0011807234172521758, 0.0014475253428743284, 0.0017414335994880865, 0.0021013169568190465, 0.002386175225795361, 0.002877103422197246, 0.0033113137571450187, 0.003920004508631972, 0.004622692962171367, 0.005320741888099018, 0.006157438515351622, 0.007193769361665554, 0.008273455793592266, 0.009627837892869612, 0.010995902235409446, 0.012351738732057214, 0.013675280335094138, 0.015321356370988413, 0.017096502901523723, 0.01873790304987247, 0.020789872303912264, 0.022912241662668656, 0.025112421280743622, 0.027554372645695855, 0.02997718777724636, 0.03247990022834201, 0.03520705528164649, 0.03786926422037245, 0.04040934741190237, 0.04312240208269981, 0.04569258766380402, 0.04855477987696133, 0.0511655104207602, 0.053889582151638894, 0.05665046467996356, 0.059361835885804244, 0.061983939817041075, 0.06451290050467992, 0.0668509279055267, 0.06891435781084565, 0.07070198670681238, 0.07248529604258967, 0.07393934435767004, 0.07525213796413951, 0.0763762162398061, 0.07737027139055419, 0.07786291213986007, 0.07813836772983604, 0.07831874936370632, 0.0781021241473647, 0.07785837078407054, 0.07723340169001482, 0.07627078333842846, 0.07522849673488288, 0.07367737830330488, 0.0719317087714751, 0.07008367148072644, 0.06823279447911171, 0.06593333042454293, 0.06352318309408908, 0.061213607341801715, 0.05854283927455017, 0.055898315807848195, 0.053165844932155766, 0.05021312375467538, 0.04724247349361068, 0.04423198365257666, 0.04107424698576366, 0.03806768038163632, 0.035294359119800875, 0.032381695681895965, 0.029649141178355015, 0.026973537239846, 0.024605865584596653, 0.022274953822884913, 0.020014853033146686, 0.017947390811119, 0.01629888956760833, 0.014498294719084108, 0.013122405718691303, 0.012072428989048761, 0.011387444187502104, 0.010936064691595318, 0.010914223279084992, 0.011343754090493322, 0.011639160376398274, 0.012641407420336578, 0.014001716188897567, 0.015602418662827982, 0.01750893727184253, 0.019827323036200675, 0.022199739662872576, 0.02486683174076939, 0.028287988859317843, 0.031759715374436615, 0.03528218217781629, 0.03924915281353457, 0.04321601800544184, 0.047495531364082196, 0.05184480125660262, 0.05589002210684307, 0.060221606527339544, 0.06437288566982652, 0.06868490117370295, 0.07266651031895398, 0.07628360021525528, 0.07974734936079775, 0.08313821865410581, 0.08618072341725755, 0.08880679058132837, 0.0909555027124567, 0.09280512529633969, 0.09440307168725229, 0.09531280451445555, 0.09574601131521769, 0.09563144843434716, 0.09514109836090057, 0.09439775586486326, 0.09297827857527835, 0.09132269441657434, 0.089110272408633, 0.08671101124249747, 0.08390395886964738, 0.08083342059718075, 0.07751788181567457, 0.07368939162558442, 0.07002921157119026, 0.06589734863359753, 0.06169237314019337, 0.05761624270983682, 0.0532698779760638, 0.049032876652562486, 0.044992771645071226, 0.04130759049987904, 0.03729285745451601, 0.033468621376734425, 0.03007337434734144, 0.02661992233518165, 0.0235039050569412, 0.02039839579970162, 0.01757502508835554, 0.015310811990053253, 0.013058583126082157, 0.011213818229417444, 0.00923303809066772, 0.007608294428204045, 0.006346459269602397, 0.0052803569091148025, 0.004259384499033193, 0.003362464912663678, 0.0026036694445657534, 0.0019957531596786625, 0.0014664034207425773, 0.0009551536570823273, 0.0005152929883503446, 0.00014214552700088053, 1.8230871038772868e-05, 2.5917361141334952e-05, -0.00010850531582235756, -0.00020472097386448502, -0.00017437497273009185, -0.00012696161845333754, -0.0001779891501956673, -0.00013595706618960946, -8.874005555797617e-05, -0.00010468025073811713, -7.287985223319504e-05, -2.4608403508025155e-05, -3.334933170441107e-05, -9.227424116818374e-05, -0.00011371933039547124, -5.6161554459904964e-05, -4.883139171285777e-05, -1.9241677211048396e-05, -4.055587067498892e-05, -3.108047180651182e-05, -2.55464898119454e-05, -2.649912008959549e-05, -2.287039865032015e-05, -1.436944602004282e-05, -1.4463981849122563e-05, -1.9110781447708224e-05, -2.2848582689765245e-05, -1.872536614453865e-05, -1.1984234332504836e-05, -9.359047078843351e-06, -5.388542257514695e-06, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}],
+                        {"annotations": [{"arrowhead": 0, "ax": 250, "ay": -40, "opacity": 0.5, "showarrow": true, "x": 0.31, "xref": "paper", "y": 0.7000000000000001, "yref": "paper"}, {"arrowhead": 0, "ax": 140, "ay": -10, "opacity": 0.5, "showarrow": true, "x": 0.52, "xref": "paper", "y": 0.39999999999999997, "yref": "paper"}], "height": 500, "images": [{"sizex": 0.3, "sizey": 0.3, "source": "https://raw.githubusercontent.com/michaelbabyn/plot_data/master/benzene.png", "x": 0.75, "xanchor": "right", "xref": "paper", "y": 0.65, "yanchor": "bottom", "yref": "paper"}, {"sizex": 0.3, "sizey": 0.3, "source": "https://raw.githubusercontent.com/michaelbabyn/plot_data/master/naphthalene.png", "x": 0.9, "xanchor": "right", "xref": "paper", "y": 0.3, "yanchor": "bottom", "yref": "paper"}], "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "white", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "white", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "#C8D4E3", "linecolor": "#C8D4E3", "minorgridcolor": "#C8D4E3", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "white", "showlakes": true, "showland": true, "subunitcolor": "#C8D4E3"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "white", "polar": {"angularaxis": {"gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": ""}, "bgcolor": "white", "radialaxis": {"gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}, "yaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}, "zaxis": {"backgroundcolor": "white", "gridcolor": "#DFE8F3", "gridwidth": 2, "linecolor": "#EBF0F8", "showbackground": true, "ticks": "", "zerolinecolor": "#EBF0F8"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}, "baxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}, "bgcolor": "white", "caxis": {"gridcolor": "#DFE8F3", "linecolor": "#A2B1C6", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": "", "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "#EBF0F8", "linecolor": "#EBF0F8", "ticks": "", "zerolinecolor": "#EBF0F8", "zerolinewidth": 2}}}, "title": {"text": "Absorption Frequencies of Benzene and Naphthalene"}, "width": 900, "xaxis": {"title": {"text": "Wavelength"}}, "yaxis": {"hoverformat": ".3f", "title": {"text": "Absorption"}}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('2cd1f09a-9433-4880-a963-ceee2c434c86');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Zoom-on-Static-Images">Zoom on Static Images<a class="anchor-link" href="#Zoom-on-Static-Images">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># Create figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="c1"># Constants</span>
+<span class="n">img_width</span> <span class="o">=</span> <span class="mi">1600</span>
+<span class="n">img_height</span> <span class="o">=</span> <span class="mi">900</span>
+<span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="c1"># Add invisible scatter trace.</span>
+<span class="c1"># This trace is added to help the autoresize logic work.</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+    <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_width</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">],</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_height</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">],</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+        <span class="n">marker_opacity</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Configure axes</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span>
+    <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_width</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span>
+    <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_height</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">],</span>
+    <span class="c1"># the scaleanchor attribute ensures that the aspect ratio stays constant</span>
+    <span class="n">scaleanchor</span><span class="o">=</span><span class="s2">&quot;x&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Add image</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">images</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">sizex</span><span class="o">=</span><span class="n">img_width</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">img_height</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">,</span>
+        <span class="n">sizey</span><span class="o">=</span><span class="n">img_height</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">,</span>
+        <span class="n">xref</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+        <span class="n">yref</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+        <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;below&quot;</span><span class="p">,</span>
+        <span class="n">sizing</span><span class="o">=</span><span class="s2">&quot;stretch&quot;</span><span class="p">,</span>
+        <span class="n">source</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/michaelbabyn/plot_data/master/bridge.jpg&quot;</span><span class="p">)]</span>
+<span class="p">)</span>
+
+<span class="c1"># Configure other layout</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="n">img_width</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="n">img_height</span> <span class="o">*</span> <span class="n">scale_factor</span><span class="p">,</span>
+    <span class="n">margin</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;l&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="ed42acc8-8c27-46bb-97c7-aa947fd1b14b" class="plotly-graph-div" style="height:450.0px; width:800.0px;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("ed42acc8-8c27-46bb-97c7-aa947fd1b14b")) {
+                    Plotly.newPlot(
+                        'ed42acc8-8c27-46bb-97c7-aa947fd1b14b',
+                        [{"marker": {"opacity": 0}, "mode": "markers", "type": "scatter", "x": [0, 800.0], "y": [0, 450.0]}],
+                        {"height": 450.0, "images": [{"layer": "below", "opacity": 1.0, "sizex": 800.0, "sizey": 450.0, "sizing": "stretch", "source": "https://raw.githubusercontent.com/michaelbabyn/plot_data/master/bridge.jpg", "x": 0, "xref": "x", "y": 450.0, "yref": "y"}], "margin": {"b": 0, "l": 0, "r": 0, "t": 0}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}, "width": 800.0, "xaxis": {"range": [0, 800.0], "visible": false}, "yaxis": {"range": [0, 450.0], "scaleanchor": "x", "visible": false}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('ed42acc8-8c27-46bb-97c7-aa947fd1b14b');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h4><p>See <a href="https://plot.ly/python/reference/#layout-images">https://plot.ly/python/reference/#layout-images</a> for more information and chart attribute options!</p>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+
+			</section>
+			<!--End Plotly Basics Section-->
+		</section>
+	</div>
+
+</main>
+
+<section class="--help-box">
+  <a
+    href="https://dash.plot.ly/getting-started
+  "
+    ><div class="--wrap">
+      <div class="--body">
+        <img
+          height="50%"
+          width="50%"
+          src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/assets/dash-ad.png"
+        />
+      </div>
+    </div>
+  </a>
+</section>
+
+
+<script>
+
+    var array = [];
+
+    $('.tutorial-content :header:not(h6)').each(function (i, e) {
+
+        var item = $(e);
+        var itemText = item.text();
+
+
+        var hash = itemText.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').replace(/^-+|-+$/g, '').toLowerCase();
+        console.log(hash);
+        item.attr("id", hash);
+
+        array.push(itemText);
+
+    });
+
+    $(".--sidebar-list").html(array.map(function(value) {
+        var hash = value.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').replace(/^-+|-+$/g, '').toLowerCase();
+        return('<li class="--sidebar-item"><a href="#' + hash + '">' + value.replace(/[^a-z0-9\s\.:]/gi, '') + '</a></li>');
+    }).join(""));
+
+
+    $(".tutorial-content :header:not(h6)").append( "\<div class=\"icon copy\" data-tooltip=\"Click to copy direct link\"><svg style=\"width:24px;height:24px\" viewBox=\"0 0 24 24\"><path fill=\"#000000\" d=\"M10.59,13.41C11,13.8 11,14.44 10.59,14.83C10.2,15.22 9.56,15.22 9.17,14.83C7.22,12.88 7.22,9.71 9.17,7.76V7.76L12.71,4.22C14.66,2.27 17.83,2.27 19.78,4.22C21.73,6.17 21.73,9.34 19.78,11.29L18.29,12.78C18.3,11.96 18.17,11.14 17.89,10.36L18.36,9.88C19.54,8.71 19.54,6.81 18.36,5.64C17.19,4.46 15.29,4.46 14.12,5.64L10.59,9.17C9.41,10.34 9.41,12.24 10.59,13.41M13.41,9.17C13.8,8.78 14.44,8.78 14.83,9.17C16.78,11.12 16.78,14.29 14.83,16.24V16.24L11.29,19.78C9.34,21.73 6.17,21.73 4.22,19.78C2.27,17.83 2.27,14.66 4.22,12.71L5.71,11.22C5.7,12.04 5.83,12.86 6.11,13.65L5.64,14.12C4.46,15.29 4.46,17.19 5.64,18.36C6.81,19.54 8.71,19.54 9.88,18.36L13.41,14.83C14.59,13.66 14.59,11.76 13.41,10.59C13,10.2 13,9.56 13.41,9.17Z\"/> </svg> </div>");
+
+</script>
+
+
+<footer class="--footer-main">
+        <section class="--footer-top">
+            <div class="--wrap">
+                <ul class="--footer-body">
+                    <li class="--footer-column">
+                        <h6 style="color:#e763fa" class="--footer-heading">DASH</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            <li><a href="https://plot.ly/products/dash/" target="_self">Overview</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://www.dashdaq.io/" target="_self">Dash DAQ</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plot.ly/dash/pricing/" target="_self">Dash Deployment Server</a></li>
+                        </ul>
+                    </li>
+                    &#x9;&#x9;
+                    <li class="--footer-column">
+                        <h6 style="color:#636efa" class="--footer-heading">COMPANY</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            <li><a href="https://plot.ly/company/careers/" target="_self">Careers</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plotly.typeform.com/to/r4OilH" target="_blank">Customer Contact</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://www.instagram.com/plotly/?hl=en" target="_blank">#plotlylife</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://twitter.com/plotlygraphs" target="_blank">Twitter</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://github.com/plotly" target="_blank">GitHub</a></li>
+                        </ul>
+                    </li>
+                    &#x9;&#x9;
+                    <li class="--footer-column">
+                        <h6 style="color:#00cc96" class="--footer-heading">RESOURCES</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            <li><a href="https://support.plot.ly/" target="_self">Developer Support</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://community.plot.ly/" target="_self">Community Support</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="http://help.plot.ly/" target="_self">Documentation</a></li>
+                        </ul>
+                    </li>
+                    &#x9;&#x9;
+                    <li class="--footer-column">
+                        <h6 style="color:#EF553B" class="--footer-heading">GRAPHING LIBRARIES</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            <li><a href="https://plot.ly/dash/" target="_self">Dash</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plot.ly/plotly-js-scientific-d3-charting-library/" target="_self">Plotly.js</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plot.ly/d3-js-for-python-and-pandas-charts/" target="_self">Plotly.py</a>
+                            </li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plot.ly/d3-js-for-r-and-shiny-charts/" target="_self">Plotly.R</a></li>
+                        </ul>
+                    </li>
+                    &#x9;&#x9;
+                    <li class="--footer-column">
+                        <h6 style="color:#19d3f3" class="--footer-heading">EMBEDDED BI/OEM</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            <li><a href="https://plot.ly/online-chart-maker/" target="_self">Chart Studio</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plot.ly/dashboards/" target="_self">Dashboards</a></li>
+                        </ul>
+                    </li>
+                    &#x9;&#x9;
+                    <li class="--footer-column">
+                        <h6 style="color:#119dff" class="--footer-heading">JOIN THE DASH CLUB</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><form action="https://plot.us12.list-manage.com/subscribe/post" method="POST" target="_blank" noValidate>
+                                <input type="hidden" name="u" value="28d7f8f0685d044fb51f0d4ee"/>
+                                <input type="hidden" name="id" value="0c1cb734d7"/>
+
+                                <label htmlFor='MERGE0'>
+                                  <p class="mailchimp-footer-text"> Dash Club is a no-fluff, twice-a-month email with links and notes on the latest Dash developments and community happenings.</p>
+                                  <input
+                                    type="email"
+                                    name="EMAIL"
+                                    id="MERGE0"
+                                    placeholder="Your Email Address"
+                                    autoCapitalize="off"
+                                    autoCorrect="off"
+                                    class="mc-input"
+                                  />
+                              </label>
+                              <input type="submit" value="Subscribe" name="subscribe" class="mc-embedded-subscribe"/>
+                            </form></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="--footer-meta">
+            <div class="--wrap">
+                <div class="left">
+                    <article class="--copyright">Copyright &copy; 2019 Plotly. All rights reserved.</article>
+                </div>
+                <div class="right">
+                    <article class="--tos"><a href="https://plot.ly/terms-of-service/" target="_blank">Terms of Service</a>
+                    </article>
+                    <article class="--privacy"><a href="https://plot.ly/privacy/" target="_blank">Privacy Policy</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+<!-- Mathjax -->
+<script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}});</script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2CSafe.js&#038;ver=4.1'></script>
+
+ 
+ <!-- Hash offset Script -->
+<script src="https://plot.ly/gh-pages/documentation/static//javascripts/hash_offset.js"></script>
+ <!-- Image Hover Script -->
+<script src="https://plot.ly/gh-pages/documentation/static//javascripts/imghover.js"></script>
+ 
+<!-- code highlighting -->
+<script src="https://plot.ly/gh-pages/documentation/static//javascripts/codehighlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+ <!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39373211-1', 'auto');
+    ga('send', 'pageview');
+</script>
+ <!-- Copy to Clipboard Assets -->
+ <!-- <script src="//images.plot.ly/assets/js/ZeroClipboard.min.js"></script> -->
+<!-- <script src="//images.plot.ly/assets/js/main.js"></script> -->
+ <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-563d60eba90f0f45" async="async"></script>
+ <script type="text/javascript">
+ $('div.output_subarea').each(function() {
+    var hasScrollbar = $(this).get(0).scrollHeight>$(this).get(0).clientHeight;
+    if($(this).height()>=300 && hasScrollbar == false){
+        $(this).after('<a href="https://goo.gl/2wUZYZ" target="_blank" style="position:absolute;right:20px;z-index:99;cursor:pointer;" class="pre-cta-go-pro">Support our open-source mission: <span style="color:darkviolet">Go Pro</span></a>')
+    }
+});
+ </script>
+
+
+
+</body>
+
+</html>

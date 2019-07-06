@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8"/>
+
+      <!-- Media query magic - http://stackoverflow.com/questions/19945658/my-iphone-thinks-its-980px-wide -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+      
+      <!-- code highlighting -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      
+
+      <!--
+      //// Stylesheets
+      -->
+
+      <!-- Fonts -->
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Inconsolata|Ubuntu+Mono:400,700"
+            rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+      <!-- code highlighting -->
+      <link rel="stylesheet" href="//plot.ly/gh-pages/documentation/static/javascripts/codehighlight/styles/tomorrow.css">
+      <link rel="stylesheet" type="text/css" href="//plot.ly/gh-pages/documentation/static/css/js-splash-highlight.css"/>
+
+      <!-- Main Stylesheets -->
+      <link rel="stylesheet" type="text/css" href="https://images.plot.ly/assets/css/normalize.css">
+      <link rel="stylesheet" type="text/css" href="https://plot.ly/gh-pages/documentation/static//css/main.css?version=237a635fa4">
+
+      <!-- LOCAL DEV STYLESHEET -->
+      <!--<link rel="stylesheet" type="text/css" href="http://api.plotly.dev/all_static/css/main.css">-->
+
+      <!-- Icon -->
+      <link rel="shortcut icon" href="/images/plotly-ico.png" type="image/x-icon"/>
+
+      <!-- Google Tags-->
+      <!-- Google Tag Manager Tag -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6T2RXG');</script>
+
+      <script id="drift">
+  !(function() {
+    var t = (window.driftt = window.drift = window.driftt || []);
+    if (!t.init) {
+      if (t.invoked)
+        return void (
+          window.console &&
+          console.error &&
+          console.error("Drift snippet included twice.")
+        );
+      (t.invoked = !0),
+        (t.methods = [
+          "identify",
+          "config",
+          "track",
+          "reset",
+          "debug",
+          "show",
+          "ping",
+          "page",
+          "hide",
+          "off",
+          "on"
+        ]),
+        (t.factory = function(e) {
+          return function() {
+            var n = Array.prototype.slice.call(arguments);
+            return n.unshift(e), t.push(n), t;
+          };
+        }),
+        t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }),
+        (t.load = function(t) {
+          var e = 3e5,
+            n = Math.ceil(new Date() / e) * e,
+            o = document.createElement("script");
+          (o.type = "text/javascript"),
+            (o.async = !0),
+            (o.crossorigin = "anonymous"),
+            (o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js");
+          var i = document.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(o, i);
+        });
+    }
+  })();
+  drift.SNIPPET_VERSION = "0.3.1";
+  drift.load("4t5t45cv8ey2");
+</script>
+
+
+
+    <!-- META TAGS -->
+    <!-- SEO Tags - title, meta_description -->
+    <title>Displaying Figures | plotly</title>
+    <meta name="description" content="Displaying Figures from Python">
+
+<!-- Bing tags -->
+    <meta name="msvalidate.01" content="D319859A832F9F1D15A7646E2A42150A" />
+<!-- Facebook tags -->
+    <meta property="og:title" content="Displaying Figures"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://images.plot.ly/plotly-documentation/thumbnail/static-image-export.png">
+    <meta property="og:description" content="Displaying Figures from Python"/>
+    <meta property="og:url" />
+    <meta property="fb:admins" content="1123751525"/>
+    <meta property="fb:admins" content="22418"/>
+
+<!-- twitter tags -->
+    <meta name="twitter:card" content="photo" />
+    <meta name="twitter:title" content="Displaying Figures"/>
+    <meta name="twitter:url" content="https://help.plot.lyplotly.py-docs/python-next/renderers/"/>
+    <meta name="twitter:description" content="Displaying Figures from Python"/>
+    <meta name="twitter:image" content="https://images.plot.ly/plotly-documentation/thumbnail/static-image-export.png">
+    <meta name="twitter:site" content="@plotlygraphs"/>
+
+<!-- Favicon -->
+    <link rel="shortcut icon" href="https://plot.ly/gh-pages/documentation/static//images/plotly-ico.png?v=2" />
+
+
+    
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".watch" style="position:relative;">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6T2RXG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+	your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div style="margin-top: 100px"></div>
+
+<header data-spy="affix" data-offset-top="80" class="header-main --default">
+    <div class="--wrap">
+        <div class="--wrap-left"><a href="https://plot.ly/" target="_blank" class="-identity">
+            <div class="-identity">
+                <img src="https://plot.ly/gh-pages/documentation/static//images/plotly_graphing_libraries.png" style="height: 66px;"/>
+            </div></a>
+
+        </div>
+        <div class="--wrap-right">
+            <nav class="--nav-meta" role="navigation">
+                <ul>
+                    <li><a href="https://go.plot.ly/demo-dash" data-mode="1" target="_blank" class="typeform-share button --enterprise-quaternary">DEMO DASH</a></li>
+                    <!-- Adding product dropdown here -->
+                    <!-- <li><a href="https://plot.ly/create/" class="button">PRODUCTS</a></li> -->
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" ng-click="mobile = !mobile" ng-class="{'active': mobile}" style="cursor: pointer;">
+
+
+                <div href="#" class="menu"><span></span></div>
+
+            </div>
+            <nav class="--nav-mobile">
+                <ul>
+                    <li><a href="https://plot.ly/feed/" target="_blank"><span class="--item">Feed</span></a></li>
+                    <li><a href="https://plot.ly/products/cloud/" target="_blank"><span class="--item">Pricing</span></a></li>
+                    <li><a href="https://plot.ly/api/" onmouseover="dropDownMenu('api-menu')" onmouseout="hideDropDownMenu('api-menu')" target="_self"><span class="--item">API
+                    <div class="icon">
+                        <svg style="width:24px;height:24px" viewbox="0 0 24 24"></svg>
+                        <path fill="#000000" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                    </div></span></a></li>
+                    <li class="tablet"><a id="toolsignin" href="/settings" target="_self" class="headerbar-nav-item --product-header">
+                        Sign
+                        In</a></li>
+                    <li class="tablet"><a id="signup" href="/settings" target="_self" class="button --enterprise-quaternary">SIGN UP</a></li>
+                    <li class="tablet"><a href="https://plot.ly/products/cloud/" class="button">UPGRADE</a></li>
+                    <li class="tablet"><a href="https://plotly.typeform.com/to/seG7Vb" data-mode="1" target="_blank" class="typeform-share button --enterprise-quaternary">
+                        REQUEST
+                        DEMO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<section class="--breadcrumb-container"  data-spy="affix" >
+    <div class="--wrap">
+        <!--
+            Show this if page is too thin (hides breadcrumb list)
+            Toggles sidebar slide in/out (see main.js)
+        -->
+        <a class="toggle-sidebar">
+            <div class="icon">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="#000000" d="M5,13L9,17L7.6,18.42L1.18,12L7.6,5.58L9,7L5,11H21V13H5M21,6V8H11V6H21M21,16V18H11V16H21Z" />
+                </svg>
+            </div>
+            <span class="show">Show Sidebar</span>
+            <span class="hide">Hide Sidebar</span>
+        </a>
+
+        <!--
+            Breadcrumb List
+        -->
+        <ul class="--breadcrumb-list">
+            <li class="--breadcrumb-item">
+                <div class="icon">
+                    <svg style="width:24px;height:24px" viewbox="0 0 24 24">
+                        <path fill="#000000" d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z"></path>
+                    </svg>
+                </div>
+                <a href="https://help.plot.ly/"><span>Help</span></a>
+            </li>
+            <li class="--breadcrumb-item"><a href="/api/"><span>Open Source Graphing Libraries</span></a></li>
+            
+            <li class="--breadcrumb-item">
+                <a href="/python-next"  ><span>Python-next</span></a>
+            </li>
+            
+
+            
+            
+	    
+	    
+            <li class="--breadcrumb-item">
+		<a href="/python-next/plotly-fundamentals">
+                <span>Plotly Fundamentals</span>
+		</a>
+            </li>
+
+            
+
+            
+            
+
+            <li class="--breadcrumb-item">
+                <span>Displaying Figures</span>
+            </li>
+            
+            
+        </ul>
+
+        <!--
+            Fork on GitHub :)
+        -->
+    
+     <div class="--fork">
+	    <a id="forklink" href= "https://github.com/plotly/documentation/tree/source-design-merge/_posts/python-next/html/" >
+                <div class="icon">
+                    <svg style="width:24px;height:24px" viewbox="0 0 24 24">
+                        <path fill="#000000" d="M2.6,10.59L8.38,4.8L10.07,6.5C9.83,7.35 10.22,8.28 11,8.73V14.27C10.4,14.61 10,15.26 10,16A2,2 0 0,0 12,18A2,2 0 0,0 14,16C14,15.26 13.6,14.61 13,14.27V9.41L15.07,11.5C15,11.65 15,11.82 15,12A2,2 0 0,0 17,14A2,2 0 0,0 19,12A2,2 0 0,0 17,10C16.82,10 16.65,10 16.5,10.07L13.93,7.5C14.19,6.57 13.71,5.55 12.78,5.16C12.35,5 11.9,4.96 11.5,5.07L9.8,3.38L10.59,2.6C11.37,1.81 12.63,1.81 13.41,2.6L21.4,10.59C22.19,11.37 22.19,12.63 21.4,13.41L13.41,21.4C12.63,22.19 11.37,22.19 10.59,21.4L2.6,13.41C1.81,12.63 1.81,11.37 2.6,10.59Z"></path>
+                    </svg>
+                </div>
+                <span>Fork on GitHub</span>
+            </a>
+    </div>
+</section>
+
+
+
+<main class="--page page--single --index">
+
+	<div class="--wrap">
+		<!-- aside - Main Sidebar-->
+		<aside class="--sidebar-container">
+			<div class="--sidebar-fixed reference" data-spy="affix"  data-offset-bottom="610" id="where">
+				<header class="--sidebar-header">Navigation</header>
+				<nav class="--sidebar-body watch"   id="where">
+					<ul class="--sidebar-list">
+
+						<li class="--sidebar-item">
+							
+
+						</li>
+					</ul>
+					
+					<button class="--btn back">
+						<div class="icon">
+							<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+								<path fill="#000000"
+									  d="M20,10V14H11L14.5,17.5L12.08,19.92L4.16,12L12.08,4.08L14.5,6.5L11,10H20Z"/>
+							</svg>
+						</div>
+						<span><a href="/python-next/">Back to Python-next
+                        </a></span>
+					</button>
+				</nav>
+			</div>
+		</aside>
+		<!-- Main-->
+		<section class="--page-body --tutorial-index --base">
+			<header class="--welcome">
+				<div class="--welcome-body">
+					<!--div.--wrap-inner-->
+					<div class="--title">
+						<div class="--category-img">
+
+							
+							
+							<img src="https://images.plot.ly/language-icons/api-home/python-logo.png" alt="">
+							
+							
+							
+							
+							
+							
+							
+							
+							
+
+						</div>
+						<div class="--body">
+							
+							
+							<h1>
+								Displaying Figures in Python-next
+							</h1>
+							<p>Displaying Figures from Python </p>
+
+							
+								<nav class="lang-nav">
+		<ul class="lang-nav--list"></ul>
+		</nav>
+
+							
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<!-- Start Plotly Basics Section -->
+			<section class="tutorial-content">
+				
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Displaying-plotly-figures">Displaying plotly figures<a class="anchor-link" href="#Displaying-plotly-figures">&#182;</a></h1><p>This section covers the many ways to display plotly figures from Python.  At the highest level, there are three general approaches:</p>
+<ol>
+<li>Using the renderers framework in the context of a script or notebook</li>
+<li>Using Dash in a web app context</li>
+<li>Using a <code>FigureWidget</code> in an ipywidgets context</li>
+</ol>
+<p>Each of these approaches is discussed below.</p>
+<h1 id="Displaying-figures-using-the-renderers-framework">Displaying figures using the renderers framework<a class="anchor-link" href="#Displaying-figures-using-the-renderers-framework">&#182;</a></h1><p>The renderers framework is a flexible approach for displaying plotly figures in a variety of contexts.  To display a figure using the renderers framework, you call the <code>.show</code> method on a graph object figure, or pass the figure to the <code>plotly.io.show</code> function. With either approach, plotly.py will display the figure using the current default renderer(s).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])],</span>
+    <span class="n">layout_title_text</span><span class="o">=</span><span class="s2">&quot;A Figure Displayed with fig.show()&quot;</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="2613f9e5-f8e1-47b4-a499-fe7c65e807ac" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("2613f9e5-f8e1-47b4-a499-fe7c65e807ac")) {
+                    Plotly.newPlot(
+                        '2613f9e5-f8e1-47b4-a499-fe7c65e807ac',
+                        [{"type": "bar", "y": [2, 1, 3]}],
+                        {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "A Figure Displayed with fig.show()"}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('2613f9e5-f8e1-47b4-a499-fe7c65e807ac');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In most situations, you can omit the call to <code>.show()</code> and allow the figure to display itself.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])],</span>
+    <span class="n">layout_title_text</span><span class="o">=</span><span class="s2">&quot;A Figure Displaying Itself&quot;</span>
+<span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="ca410b8f-3397-45ec-86b2-1a18b430b88c" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("ca410b8f-3397-45ec-86b2-1a18b430b88c")) {
+                    Plotly.newPlot(
+                        'ca410b8f-3397-45ec-86b2-1a18b430b88c',
+                        [{"type": "bar", "y": [2, 1, 3]}],
+                        {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "A Figure Displaying Itself"}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('ca410b8f-3397-45ec-86b2-1a18b430b88c');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>To be precise, figures will display themselves using the current default renderer when the two following conditions are true. First, the last expression in a cell must evaluates to a figure. Second, plotly.py must be running from within an IPython kernel.</p>
+</blockquote>
+<p><strong>In many contexts, an appropriate renderer will be chosen automatically and you will not need to perform any additional configuration.</strong> These contexts include the classic Jupyter Notebook, JupyterLab (provided the <code>jupyterlab-plotly</code> JupyterLab extension is installed), Visual Studio Code notebooks, Colab, Kaggle notebooks, Azure notebooks, and the Python interactive shell.  Additional contexts are supported by choosing a compatible renderer including the IPython console, QtConsole, Spyder, and more.</p>
+<p>Next, we will show how to configure the default renderer.  After that, we will describe all of the built-in renderers and discuss why you might choose to use each one.</p>
+<blockquote><p>Note: The renderers framework is a generalization of the <code>plotly.offline.iplot</code> and <code>plotly.offline.plot</code> functions that were the recommended way to display figures prior to plotly.py version 4.  These functions have been reimplemented using the renderers framework and are still supported for backward compatibility, but they will not be discussed here.</p>
+</blockquote>
+<h2 id="Setting-the-default-renderer">Setting the default renderer<a class="anchor-link" href="#Setting-the-default-renderer">&#182;</a></h2><p>The current and available renderers are configured using the <code>plotly.io.renderers</code> configuration object.  Display this object to see the current default renderer and the list of all available renderers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Renderers configuration
+-----------------------
+    Default renderer: &#39;notebook_connected&#39;
+    Available renderers:
+        [&#39;plotly_mimetype&#39;, &#39;jupyterlab&#39;, &#39;nteract&#39;, &#39;vscode&#39;,
+         &#39;notebook&#39;, &#39;notebook_connected&#39;, &#39;kaggle&#39;, &#39;azure&#39;, &#39;colab&#39;,
+         &#39;json&#39;, &#39;png&#39;, &#39;jpeg&#39;, &#39;jpg&#39;, &#39;svg&#39;, &#39;pdf&#39;, &#39;browser&#39;,
+         &#39;firefox&#39;, &#39;chrome&#39;, &#39;chromium&#39;, &#39;iframe&#39;, &#39;iframe_connected&#39;,
+         &#39;sphinx_gallery&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The default renderer that you see when you display <code>pio.renderers</code> might be different than what is shown here.  This is because plotly.py attempts to autodetect an appropriate renderer at startup.  You can change the default renderer by assigning the name of an available renderer to the <code>pio.renderers.default</code> property.  For example, to switch to the <code>'browser'</code> renderer, which opens figures in a tab of the default web browser, you would run the following.</p>
+<blockquote><p>Note: Default renderers persist for the duration of a single session, but they do not persist across sessions. If you are working in an IPython kernel, this means that default renderers will persist for the life of the kernel, but they will not persist across kernel restarts.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;browser&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is also possible to set the default renderer using a system environment variable.  At startup, plotly.py checks for the existence of an environment variable named <code>PLOTLY_RENDERER</code>.  If this environment variable is set to the name of an available renderer, this renderer is set as the default.</p>
+<h2 id="Overriding-the-default-renderer">Overriding the default renderer<a class="anchor-link" href="#Overriding-the-default-renderer">&#182;</a></h2><p>It is also possible to override the default renderer temporarily by passing the name of an available renderer as the <code>renderer</code> keyword argument to the <code>.show</code> method.  Here is an example of displaying a figure using the <code>svg</code> renderer (described below) without changing the default renderer.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])],</span>
+    <span class="n">layout_title_text</span><span class="o">=</span><span class="s2">&quot;A Figure Displayed with the &#39;svg&#39; Renderer&quot;</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_svg output_subarea ">
+<svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="700" height="450" viewBox="0 0 700 450"><rect x="0" y="0" width="700" height="450" style="fill: rgb(255, 255, 255); fill-opacity: 1;"/><defs id="defs-784709"><g class="clips"><clipPath id="clip784709xyplot" class="plotclip"><rect width="540" height="270"/></clipPath><clipPath class="axesclip" id="clip784709x"><rect x="80" y="0" width="540" height="450"/></clipPath><clipPath class="axesclip" id="clip784709y"><rect x="0" y="100" width="700" height="270"/></clipPath><clipPath class="axesclip" id="clip784709xy"><rect x="80" y="100" width="540" height="270"/></clipPath></g><g class="gradients"/></defs><g class="bglayer"><rect class="bg" x="80" y="100" width="540" height="270" style="fill: rgb(229, 236, 246); fill-opacity: 1; stroke-width: 0;"/></g><g class="layer-below"><g class="imagelayer"/><g class="shapelayer"/></g><g class="cartesianlayer"><g class="subplot xy"><g class="layer-subplot"><g class="shapelayer"/><g class="imagelayer"/></g><g class="gridlayer"><g class="x"/><g class="y"><path class="ygrid crisp" transform="translate(0,327.25)" d="M80,0h540" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"/><path class="ygrid crisp" transform="translate(0,284.5)" d="M80,0h540" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"/><path class="ygrid crisp" transform="translate(0,241.75)" d="M80,0h540" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"/><path class="ygrid crisp" transform="translate(0,199)" d="M80,0h540" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"/><path class="ygrid crisp" transform="translate(0,156.25)" d="M80,0h540" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"/><path class="ygrid crisp" transform="translate(0,113.5)" d="M80,0h540" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"/></g></g><g class="zerolinelayer"><path class="yzl zl crisp" transform="translate(0,370)" d="M80,0h540" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 2px;"/></g><path class="xlines-below"/><path class="ylines-below"/><g class="overlines-below"/><g class="xaxislayer-below"/><g class="yaxislayer-below"/><g class="overaxes-below"/><g class="plot" transform="translate(80, 100)" clip-path="url('#clip784709xyplot')"><g class="barlayer mlayer"><g class="trace bars" style="opacity: 1;"><g class="points"><g class="point"><path d="M18,270V99H162V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(99, 110, 250); fill-opacity: 1; stroke: rgb(229, 236, 246); stroke-opacity: 1;"/></g><g class="point"><path d="M198,270V184.5H342V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(99, 110, 250); fill-opacity: 1; stroke: rgb(229, 236, 246); stroke-opacity: 1;"/></g><g class="point"><path d="M378,270V13.5H522V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0.5px; fill: rgb(99, 110, 250); fill-opacity: 1; stroke: rgb(229, 236, 246); stroke-opacity: 1;"/></g></g></g></g></g><g class="overplot"/><path class="xlines-above crisp" d="M0,0" style="fill: none;"/><path class="ylines-above crisp" d="M0,0" style="fill: none;"/><g class="overlines-above"/><g class="xaxislayer-above"><g class="xtick"><text text-anchor="middle" x="0" y="383" transform="translate(80,0)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">−0.5</text></g><g class="xtick"><text text-anchor="middle" x="0" y="383" transform="translate(170,0)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">0</text></g><g class="xtick"><text text-anchor="middle" x="0" y="383" transform="translate(260,0)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">0.5</text></g><g class="xtick"><text text-anchor="middle" x="0" y="383" transform="translate(350,0)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">1</text></g><g class="xtick"><text text-anchor="middle" x="0" y="383" transform="translate(440,0)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">1.5</text></g><g class="xtick"><text text-anchor="middle" x="0" y="383" transform="translate(530,0)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">2</text></g><g class="xtick"><text text-anchor="middle" x="0" y="383" transform="translate(620,0)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">2.5</text></g></g><g class="yaxislayer-above"><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" transform="translate(0,370)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">0</text></g><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" transform="translate(0,327.25)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">0.5</text></g><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" transform="translate(0,284.5)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">1</text></g><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" transform="translate(0,241.75)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">1.5</text></g><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" transform="translate(0,199)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">2</text></g><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" transform="translate(0,156.25)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">2.5</text></g><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" transform="translate(0,113.5)" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">3</text></g></g><g class="overaxes-above"/></g></g><g class="polarlayer"/><g class="ternarylayer"/><g class="geolayer"/><g class="funnelarealayer"/><g class="pielayer"/><g class="sunburstlayer"/><g class="glimages"/><defs id="topdefs-784709"><g class="clips"/></defs><g class="layer-above"><g class="imagelayer"/><g class="shapelayer"/></g><g class="infolayer"><g class="g-gtitle"><text class="gtitle" x="35" y="50" text-anchor="start" dy="0em" style="font-family: 'Open Sans', verdana, arial, sans-serif; font-size: 17px; fill: rgb(42, 63, 95); opacity: 1; font-weight: normal; white-space: pre;">A Figure Displayed with the 'svg' Renderer</text></g><g class="g-xtitle"/><g class="g-ytitle"/></g></svg>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-built-in-renderers">The built-in renderers<a class="anchor-link" href="#The-built-in-renderers">&#182;</a></h2><p>In this section, we will describe the built-in renderers so that you can choose the one(s) that best suit your needs.</p>
+<h3 id="Interactive-renderers">Interactive renderers<a class="anchor-link" href="#Interactive-renderers">&#182;</a></h3><p>Interactive renderers display figures using the Plotly.js JavaScript library and are fully interactive, supporting pan, zoom, hover tooltips, etc.</p>
+<h4 id="notebook"><code>notebook</code><a class="anchor-link" href="#notebook">&#182;</a></h4><p>This renderer is intended for use in the classic <a href="https://jupyter.org/install.html">Jupyter Notebook</a> (not JupyterLab).  The full Plotly.js JavaScript library bundle is added to the notebook the first time a figure is rendered, so this renderer will work without an internet connection.</p>
+<p>This renderer is a good choice for notebooks that will be exported to HTML files (Either using <a href="https://nbconvert.readthedocs.io/en/latest/">nbconvert</a> or the "Download as HTML" menu action) because the exported HTML files will work without an internet connection.</p>
+<blockquote><p>Note: Adding the Plotly.js bundle to the notebook does add a few megabytes to the notebook size, so if you can count on having an internet connection you may want to consider the <code>notebook_connected</code> renderer.</p>
+</blockquote>
+<h4 id="notebook_connected"><code>notebook_connected</code><a class="anchor-link" href="#notebook_connected">&#182;</a></h4><p>This renderer is the same as <code>notebook</code>, except the Plotly.js JavaScript library bundle is loaded from an online CDN location.  This saves a few megabytes in notebook size, but an internet connection is required in order to display figures that are rendered this way.</p>
+<p>This renderer is a good choice for notebooks that will be shared with <a href="https://nbviewer.jupyter.org/">nbviewer</a> since users must have an active internet connection to access nbviewer in the first place.</p>
+<h4 id="kaggle-and-azure"><code>kaggle</code> and <code>azure</code><a class="anchor-link" href="#kaggle-and-azure">&#182;</a></h4><p>These are aliases for <code>notebook_connected</code> because this renderer is a good choice for use with <a href="https://www.kaggle.com/docs/kernels">Kaggle kernels</a> and <a href="https://notebooks.azure.com/">Azure Notebooks</a>.</p>
+<h4 id="colab"><code>colab</code><a class="anchor-link" href="#colab">&#182;</a></h4><p>This is a custom renderer for use with <a href="https://colab.research.google.com">Google Colab</a>.</p>
+<h4 id="browser"><code>browser</code><a class="anchor-link" href="#browser">&#182;</a></h4><p>This renderer will open a figure in a browser tab using the default web browser.  This renderer can only be used when the Python kernel is running locally on the same machine as the web browser, so it is not compatible with Jupyter Hub or online notebook services.</p>
+<blockquote><p>Implementation Note 1: The "default browser" is the browser that is chosen by the Python <a href="https://docs.python.org/3.7/library/webbrowser.html"><code>webbrowser</code></a> module.</p>
+<p>Implementation Note 2: The <code>browser</code> renderer works by setting up a single use local webserver on a local port. Since the webserver is shut down as soon as the figure is served to the browser, the figure will not be restored if the browser is refreshed.</p>
+</blockquote>
+<h4 id="firefox,-chrome,-and-chromium"><code>firefox</code>, <code>chrome</code>, and <code>chromium</code><a class="anchor-link" href="#firefox,-chrome,-and-chromium">&#182;</a></h4><p>These renderers are the same as the <code>browser</code> renderer, but they force the use of a particular browser.</p>
+<h4 id="iframe-and-iframe_connected"><code>iframe</code> and <code>iframe_connected</code><a class="anchor-link" href="#iframe-and-iframe_connected">&#182;</a></h4><p>These renderers write figures out as standalone HTML files and then display <a href="https://www.w3schools.com/html/html_iframe.asp"><code>iframe</code></a> elements that reference these HTML files. The <code>iframe</code> renderer will include the Plotly.js JavaScript bundle in each HTML file that is written, while the <code>iframe_connected</code> renderer includes only a reference to an online CDN location from which to load Plotly.js.  Consequently, the <code>iframe_connected</code> renderer outputs files that are smaller than the <code>iframe</code> renderer, but it requires an internet connection while the <code>iframe</code> renderer can operate offline.</p>
+<p>This renderer may be useful when working with notebooks than contain lots of large figures.  When using the <code>notebook</code> or <code>notebook_connected</code> renderer, all of the data for all of the figures in a notebook are stored inline in the notebook itself. If this would result in a prohibitively large notebook size, an <code>iframe</code> or <code>iframe_connected</code> renderer could be used instead. With the iframe renderers, the figure data are stored in the individual HTML files rather than in the notebook itself, resulting in a smaller notebook size.</p>
+<blockquote><p>Implementation Note: The HTML files written by the iframe renderers are stored in a subdirectory named <code>iframe_figures</code>.  The HTML files are given names based on the execution number of the notebook cell that produced the figure. This means that each time a notebook kernel is restarted, any prior HTML files will be overwritten.  This also means that you should not store multiple notebooks using an iframe renderer in the same directory, because this could result in figures from one notebook overwriting figures from another notebook.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="plotly_mimetype"><code>plotly_mimetype</code><a class="anchor-link" href="#plotly_mimetype">&#182;</a></h4><p>The <code>plotly_mimetype</code> renderer creates a specification of the plotly figure (called a MIME-type bundle), and requests that the current user interface displays it. User interfaces that support this renderer include <a href="https://jupyterlab.readthedocs.io/en/stable/">JupyterLab</a> (requires the <a href="https://www.npmjs.com/package/jupyterlab-plotly"><code>jupyterlab-plotly</code></a> extension), <a href="https://nteract.io/">nteract</a>, and the Visual Studio Code <a href="https://code.visualstudio.com/docs/python/jupyter-support">notebook interface</a>.</p>
+<h4 id="jupyterlab,-nteract,-and-vscode"><code>jupyterlab</code>, <code>nteract</code>, and <code>vscode</code><a class="anchor-link" href="#jupyterlab,-nteract,-and-vscode">&#182;</a></h4><p>These are aliases for <code>plotly_mimetype</code> since this renderer is a good choice when working in JupyterLab, nteract, and the Visual Studio Code notebook interface.</p>
+<h3 id="Static-image-renderers">Static image renderers<a class="anchor-link" href="#Static-image-renderers">&#182;</a></h3><p>A set of renderers is provided for displaying figures as static images.  These renderers all rely on the orca static image export utility. See the <a href="https://plot.ly/python/static-image-export/">Static Image Export</a> page for more information on getting set up with orca.</p>
+<h4 id="png,-jpeg,-and-svg"><code>png</code>, <code>jpeg</code>, and <code>svg</code><a class="anchor-link" href="#png,-jpeg,-and-svg">&#182;</a></h4><p>These renderers display figures as static PNG, JPEG, and SVG images respectively.  These renderers are useful for user interfaces that do not support inline HTML output, but do support inline static images.  Examples include the <a href="https://qtconsole.readthedocs.io/en/stable/">QtConsole</a>, <a href="https://www.spyder-ide.org/">Spyder</a>, and the PyCharm <a href="https://www.jetbrains.com/help/pycharm/jupyter-notebook-support.html">notebook interface</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])],</span>
+    <span class="n">layout_title_text</span><span class="o">=</span><span class="s2">&quot;A Figure Displayed with the &#39;png&#39; Renderer&quot;</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="pdf"><code>pdf</code><a class="anchor-link" href="#pdf">&#182;</a></h4><p>This renderer displays figures as static PDF files. This is especially useful for notebooks that will be exported to PDF files using the LaTeX export capabilities of nbconvert.</p>
+<h3 id="Other-renderers">Other renderers<a class="anchor-link" href="#Other-renderers">&#182;</a></h3><p>Other miscellaneous renderers</p>
+<h4 id="json"><code>json</code><a class="anchor-link" href="#json">&#182;</a></h4><p>In editors that support it (JupyterLab, nteract, and the Visual Studio Code notebook interface), this renderer displays the JSON representation of a figure in a collapsible interactive tree structure.  This can be very useful for examining the structure of complex figures</p>
+<h3 id="Multiple-renderers">Multiple renderers<a class="anchor-link" href="#Multiple-renderers">&#182;</a></h3><p>You can specify that multiple renderers should be used by joining their names on <code>"+"</code> characters.  This is useful when writing code that needs to support multiple contexts.  For example, if a notebook specifies a default renderer string of  <code>"notebook+plotly_mimetype+pdf"</code>then this notebook would be able to run in the classic Jupyter Notebook, in JupyterLab, and it would support being exported to PDF using nbconvert.</p>
+<h2 id="Customizing-built-in-renderers">Customizing built-in renderers<a class="anchor-link" href="#Customizing-built-in-renderers">&#182;</a></h2><p>Most built-in renderers have configuration options to customize their behavior.  To view a description of a renderer, including its configuration options, access the renderer object using dictionary-style key lookup on the <code>plotly.io.renderers</code> configuration object and then display it.  Here is an example of accessing and displaying the <code>png</code> renderer.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="n">png_renderer</span> <span class="o">=</span> <span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="p">[</span><span class="s2">&quot;png&quot;</span><span class="p">]</span>
+<span class="n">png_renderer</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>PngRenderer(width=700, height=450, scale=None)
+
+    Renderer to display figures as static PNG images.  This renderer requires
+    the orca command-line utility and is broadly compatible across IPython
+    environments (classic Jupyter Notebook, JupyterLab, QtConsole, VSCode,
+    PyCharm, etc) and nbconvert targets (HTML, PDF, etc.).
+
+    mime type: &#39;image/png&#39;
+    </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From this output, you can see that the <code>png</code> renderer supports 3 properties: <code>width</code>, <code>height</code>, and <code>scale</code>.  You can customize these properties by assigning new values to them.</p>
+<p>Here is an example that customizes the <code>png</code> renderer to change the resulting image size, sets the <code>png</code> renderer as the default, and then displays a figure.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="n">png_renderer</span> <span class="o">=</span> <span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="p">[</span><span class="s2">&quot;png&quot;</span><span class="p">]</span>
+<span class="n">png_renderer</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">png_renderer</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;png&quot;</span>
+
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])],</span>
+    <span class="n">layout_title_text</span><span class="o">=</span><span class="s2">&quot;A Figure Displayed with the &#39;png&#39; Renderer&quot;</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also override the values of renderer parameters temporarily by passing them as keyword arguments to the <code>.show</code> method.  For example</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])],</span>
+    <span class="n">layout_title_text</span><span class="o">=</span><span class="s2">&quot;A Figure Displayed with the &#39;png&#39; Renderer&quot;</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Displaying-figures-using-Dash">Displaying figures using Dash<a class="anchor-link" href="#Displaying-figures-using-Dash">&#182;</a></h1><p>Dash is a Python framework for building web applications, and it provides built-in support for displaying Plotly figures. See the <a href="https://dash.plot.ly/">Dash User Guide</a> for more information.</p>
+<p>It is important to note that Dash does not use the renderers framework discussed above, so you should not use the <code>.show</code> figure method or the <code>plotly.io.show</code> function inside Dash applications.</p>
+<h1 id="Displaying-figures-using-ipywidgets">Displaying figures using ipywidgets<a class="anchor-link" href="#Displaying-figures-using-ipywidgets">&#182;</a></h1><p>Plotly figures can be displayed in <a href="https://ipywidgets.readthedocs.io/en/stable/">ipywidgets</a> contexts using <code>plotly.graph_objects.FigureWidget</code> objects.  <code>FigureWidget</code> is a figure graph object (Just like <code>plotly.graph_objects.Figure</code>) so you can add traces to it and update it just like a regular <code>Figure</code>.  But <code>FigureWidget</code> is also an ipywidgets object, which means that you can display it alongside other ipywidgets to build user interfaces right in the notebook.  See the <a href="https://plot.ly/python/figurewidget/">Plotly FigureWidget Overview</a> for more information on integrating plotly figures with ipywidgets.</p>
+<p>It is important to note that <code>FigureWidget</code> does not use the renderers framework discussed above, so you should not use the <code>.show</code> figure method or the <code>plotly.io.show</code> function on <code>FigureWidget</code> objects.</p>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+
+			</section>
+			<!--End Plotly Basics Section-->
+		</section>
+	</div>
+
+</main>
+
+<section class="--help-box">
+  <a
+    href="https://dash.plot.ly/getting-started
+  "
+    ><div class="--wrap">
+      <div class="--body">
+        <img
+          height="50%"
+          width="50%"
+          src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/assets/dash-ad.png"
+        />
+      </div>
+    </div>
+  </a>
+</section>
+
+
+<script>
+
+    var array = [];
+
+    $('.tutorial-content :header:not(h6)').each(function (i, e) {
+
+        var item = $(e);
+        var itemText = item.text();
+
+
+        var hash = itemText.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').replace(/^-+|-+$/g, '').toLowerCase();
+        console.log(hash);
+        item.attr("id", hash);
+
+        array.push(itemText);
+
+    });
+
+    $(".--sidebar-list").html(array.map(function(value) {
+        var hash = value.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').replace(/^-+|-+$/g, '').toLowerCase();
+        return('<li class="--sidebar-item"><a href="#' + hash + '">' + value.replace(/[^a-z0-9\s\.:]/gi, '') + '</a></li>');
+    }).join(""));
+
+
+    $(".tutorial-content :header:not(h6)").append( "\<div class=\"icon copy\" data-tooltip=\"Click to copy direct link\"><svg style=\"width:24px;height:24px\" viewBox=\"0 0 24 24\"><path fill=\"#000000\" d=\"M10.59,13.41C11,13.8 11,14.44 10.59,14.83C10.2,15.22 9.56,15.22 9.17,14.83C7.22,12.88 7.22,9.71 9.17,7.76V7.76L12.71,4.22C14.66,2.27 17.83,2.27 19.78,4.22C21.73,6.17 21.73,9.34 19.78,11.29L18.29,12.78C18.3,11.96 18.17,11.14 17.89,10.36L18.36,9.88C19.54,8.71 19.54,6.81 18.36,5.64C17.19,4.46 15.29,4.46 14.12,5.64L10.59,9.17C9.41,10.34 9.41,12.24 10.59,13.41M13.41,9.17C13.8,8.78 14.44,8.78 14.83,9.17C16.78,11.12 16.78,14.29 14.83,16.24V16.24L11.29,19.78C9.34,21.73 6.17,21.73 4.22,19.78C2.27,17.83 2.27,14.66 4.22,12.71L5.71,11.22C5.7,12.04 5.83,12.86 6.11,13.65L5.64,14.12C4.46,15.29 4.46,17.19 5.64,18.36C6.81,19.54 8.71,19.54 9.88,18.36L13.41,14.83C14.59,13.66 14.59,11.76 13.41,10.59C13,10.2 13,9.56 13.41,9.17Z\"/> </svg> </div>");
+
+</script>
+
+
+<footer class="--footer-main">
+        <section class="--footer-top">
+            <div class="--wrap">
+                <ul class="--footer-body">
+                    <li class="--footer-column">
+                        <h6 style="color:#e763fa" class="--footer-heading">DASH</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            <li><a href="https://plot.ly/products/dash/" target="_self">Overview</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://www.dashdaq.io/" target="_self">Dash DAQ</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plot.ly/dash/pricing/" target="_self">Dash Deployment Server</a></li>
+                        </ul>
+                    </li>
+                    &#x9;&#x9;
+                    <li class="--footer-column">
+                        <h6 style="color:#636efa" class="--footer-heading">COMPANY</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            <li><a href="https://plot.ly/company/careers/" target="_self">Careers</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plotly.typeform.com/to/r4OilH" target="_blank">Customer Contact</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://www.instagram.com/plotly/?hl=en" target="_blank">#plotlylife</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://twitter.com/plotlygraphs" target="_blank">Twitter</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://github.com/plotly" target="_blank">GitHub</a></li>
+                        </ul>
+                    </li>
+                    &#x9;&#x9;
+                    <li class="--footer-column">
+                        <h6 style="color:#00cc96" class="--footer-heading">RESOURCES</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            <li><a href="https://support.plot.ly/" target="_self">Developer Support</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://community.plot.ly/" target="_self">Community Support</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="http://help.plot.ly/" target="_self">Documentation</a></li>
+                        </ul>
+                    </li>
+                    &#x9;&#x9;
+                    <li class="--footer-column">
+                        <h6 style="color:#EF553B" class="--footer-heading">GRAPHING LIBRARIES</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            <li><a href="https://plot.ly/dash/" target="_self">Dash</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plot.ly/plotly-js-scientific-d3-charting-library/" target="_self">Plotly.js</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plot.ly/d3-js-for-python-and-pandas-charts/" target="_self">Plotly.py</a>
+                            </li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plot.ly/d3-js-for-r-and-shiny-charts/" target="_self">Plotly.R</a></li>
+                        </ul>
+                    </li>
+                    &#x9;&#x9;
+                    <li class="--footer-column">
+                        <h6 style="color:#19d3f3" class="--footer-heading">EMBEDDED BI/OEM</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            <li><a href="https://plot.ly/online-chart-maker/" target="_self">Chart Studio</a></li>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><a href="https://plot.ly/dashboards/" target="_self">Dashboards</a></li>
+                        </ul>
+                    </li>
+                    &#x9;&#x9;
+                    <li class="--footer-column">
+                        <h6 style="color:#119dff" class="--footer-heading">JOIN THE DASH CLUB</h6>&#x9;&#x9;&#x9;
+                        <ul>
+                            &#x9;&#x9;&#x9;&#x9;
+                            <li><form action="https://plot.us12.list-manage.com/subscribe/post" method="POST" target="_blank" noValidate>
+                                <input type="hidden" name="u" value="28d7f8f0685d044fb51f0d4ee"/>
+                                <input type="hidden" name="id" value="0c1cb734d7"/>
+
+                                <label htmlFor='MERGE0'>
+                                  <p class="mailchimp-footer-text"> Dash Club is a no-fluff, twice-a-month email with links and notes on the latest Dash developments and community happenings.</p>
+                                  <input
+                                    type="email"
+                                    name="EMAIL"
+                                    id="MERGE0"
+                                    placeholder="Your Email Address"
+                                    autoCapitalize="off"
+                                    autoCorrect="off"
+                                    class="mc-input"
+                                  />
+                              </label>
+                              <input type="submit" value="Subscribe" name="subscribe" class="mc-embedded-subscribe"/>
+                            </form></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="--footer-meta">
+            <div class="--wrap">
+                <div class="left">
+                    <article class="--copyright">Copyright &copy; 2019 Plotly. All rights reserved.</article>
+                </div>
+                <div class="right">
+                    <article class="--tos"><a href="https://plot.ly/terms-of-service/" target="_blank">Terms of Service</a>
+                    </article>
+                    <article class="--privacy"><a href="https://plot.ly/privacy/" target="_blank">Privacy Policy</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+<!-- Mathjax -->
+<script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}});</script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2CSafe.js&#038;ver=4.1'></script>
+
+ 
+ <!-- Hash offset Script -->
+<script src="https://plot.ly/gh-pages/documentation/static//javascripts/hash_offset.js"></script>
+ <!-- Image Hover Script -->
+<script src="https://plot.ly/gh-pages/documentation/static//javascripts/imghover.js"></script>
+ 
+<!-- code highlighting -->
+<script src="https://plot.ly/gh-pages/documentation/static//javascripts/codehighlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+ <!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-39373211-1', 'auto');
+    ga('send', 'pageview');
+</script>
+ <!-- Copy to Clipboard Assets -->
+ <!-- <script src="//images.plot.ly/assets/js/ZeroClipboard.min.js"></script> -->
+<!-- <script src="//images.plot.ly/assets/js/main.js"></script> -->
+ <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-563d60eba90f0f45" async="async"></script>
+ <script type="text/javascript">
+ $('div.output_subarea').each(function() {
+    var hasScrollbar = $(this).get(0).scrollHeight>$(this).get(0).clientHeight;
+    if($(this).height()>=300 && hasScrollbar == false){
+        $(this).after('<a href="https://goo.gl/2wUZYZ" target="_blank" style="position:absolute;right:20px;z-index:99;cursor:pointer;" class="pre-cta-go-pro">Support our open-source mission: <span style="color:darkviolet">Go Pro</span></a>')
+    }
+});
+ </script>
+
+
+
+</body>
+
+</html>
