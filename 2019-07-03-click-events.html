@@ -1,0 +1,206 @@
+---
+description: Click Events With FigureWidget
+display_as: chart_events
+has_thumbnail: True
+ipynb: ~notebook_demo/240
+language: python
+layout: user-guide
+name: Click Events
+order: 24
+page_type: example_index
+permalink: python/click-events/
+thumbnail: thumbnail/figurewidget-click-events.gif
+title: Click Events
+v4upgrade: True
+---
+
+{% raw %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Update-Points-Using-a-Click-Callback">Update Points Using a Click Callback<a class="anchor-link" href="#Update-Points-Using-a-Click-Callback">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">([</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">)])</span>
+
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#a3a7e4&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">scatter</span><span class="o">.</span><span class="n">marker</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">colors</span>
+<span class="n">scatter</span><span class="o">.</span><span class="n">marker</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">f</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">hovermode</span> <span class="o">=</span> <span class="s1">&#39;closest&#39;</span>
+
+
+<span class="c1"># create our callback function</span>
+<span class="k">def</span> <span class="nf">update_point</span><span class="p">(</span><span class="n">trace</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">selector</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">scatter</span><span class="o">.</span><span class="n">marker</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">scatter</span><span class="o">.</span><span class="n">marker</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">points</span><span class="o">.</span><span class="n">point_inds</span><span class="p">:</span>
+        <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#bae2be&#39;</span>
+        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+        <span class="k">with</span> <span class="n">f</span><span class="o">.</span><span class="n">batch_update</span><span class="p">():</span>
+            <span class="n">scatter</span><span class="o">.</span><span class="n">marker</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">c</span>
+            <span class="n">scatter</span><span class="o">.</span><span class="n">marker</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">s</span>
+
+
+<span class="n">scatter</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">update_point</span><span class="p">)</span>
+
+<span class="n">f</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+
+ 
+ 
+<div id="14562396-fb7c-4d5f-b21e-d04068b1cf8c"></div>
+<div class="output_subarea output_widget_view ">
+<script type="text/javascript">
+var element = $('#14562396-fb7c-4d5f-b21e-d04068b1cf8c');
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "8a10315fab7442649b7193830e4518c4"}
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='https://raw.githubusercontent.com/michaelbabyn/plot_data/master/figurewidget-click-event.gif'></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See <a href="https://github.com/jonmmease/plotly_ipywidget_notebooks">these Jupyter notebooks</a> for even more FigureWidget examples.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">([</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">()])</span>
+<span class="n">help</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">on_click</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on method on_click in module plotly.basedatatypes:
+
+on_click(callback, append=False) method of plotly.graph_objs.Scatter instance
+    Register function to be called when the user clicks on one or more
+    points in this trace.
+    
+    Note: Callbacks will only be triggered when the trace belongs to a
+    instance of plotly.graph_objs.FigureWidget and it is displayed in an
+    ipywidget context. Callbacks will not be triggered on figures
+    that are displayed using plot/iplot.
+    
+    Parameters
+    ----------
+    callback
+        Callable function that accepts 3 arguments
+    
+        - this trace
+        - plotly.callbacks.Points object
+        - plotly.callbacks.InputDeviceState object
+    
+    append : bool
+        If False (the default), this callback replaces any previously
+        defined on_click callbacks for this trace. If True,
+        this callback is appended to the list of any previously defined
+        callbacks.
+    
+    Returns
+    -------
+    None
+    
+    Examples
+    --------
+    &gt;&gt;&gt; from plotly.callbacks import Points, InputDeviceState
+    &gt;&gt;&gt; points, state = Points(), InputDeviceState()
+    
+    &gt;&gt;&gt; def click_fn(trace, points, state):
+    ...     inds = points.point_inds
+    ...     # Do something
+    
+    &gt;&gt;&gt; trace.on_click(click_fn)
+    
+    Note: The creation of the `points` and `state` objects is optional,
+    it&#39;s simply a convenience to help the text editor perform completion
+    on the arguments inside `click_fn`
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+ 
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"8a10315fab7442649b7193830e4518c4": {"model_name": "FigureModel", "model_module": "plotlywidget", "model_module_version": "^1.0.0", "state": {"_config": {"plotlyServerURL": "https://plot.ly"}, "_data": [{"mode": "markers", "x": {"dtype": "float64", "shape": [100]}, "y": {"dtype": "float64", "shape": [100]}, "type": "scatter", "uid": "4ea63280-70a2-4584-8efa-fa26c461b2c3"}], "_dom_classes": [], "_js2py_layoutDelta": {}, "_js2py_pointsCallback": {}, "_js2py_relayout": {}, "_js2py_restyle": {}, "_js2py_traceDeltas": {}, "_js2py_update": {}, "_last_layout_edit_id": 3, "_last_trace_edit_id": 2, "_layout": {}, "_model_module": "plotlywidget", "_model_module_version": "^1.0.0", "_model_name": "FigureModel", "_py2js_addTraces": {}, "_py2js_animate": {}, "_py2js_deleteTraces": {}, "_py2js_moveTraces": {}, "_py2js_relayout": null, "_py2js_removeLayoutProps": {}, "_py2js_removeTraceProps": {}, "_py2js_restyle": null, "_py2js_update": {}, "_view_count": 0, "_view_module": "plotlywidget", "_view_module_version": "^1.0.0", "_view_name": "FigureView"}, "buffers": [{"data": "yN8xvJ0Z3j8MxPX/5RftP/bV0PxdbNc/2H/rYFuV4T+sS316AjfsPwTmG4MqqMo/NWq2Uvol5z99TzSeB2jhPxAcI1ePRd4/wEBPIHLQ4T+0W3HOgALHP6nEqRMHUes/9/Y/2qkf7D+eaJU9s57dP5xpFuVNX+A/MmzSER4r0D9xCf6WpfzvP86+aaJb9dM/P1jSY4kZ5D9UIshEp6rQP0iX5bL3EOM/7jkqM7f05z9v46+qhY3uP3qNim75e+0/PW4QDH7X6T86xgXbGo3ZP0g2Gv1hkMY/ItgCAT0x2j9sqlXOrOnPPzXJIPFvIuI/To8SeJRC7z9D2+bZEOPuP3gmg0JXkOs/uLvDoGuJ6j/aj46llS3YPzgsFdydU8U/2OxXNzDl0T+2UgHQEPXcP+BFE468xe4/ksKEEKnI5j9YRgKeA/TYPzXdtWkxTuM/no9q+WWb5D9gc+QWEW7HPyzk8gryJcw/ZYUGDWqE5j8wCjKR50DVP2FAAsdrdOI/A8ScaEws6T/vosbdo8juP1CKqfNi0uk/sNZv7LoHvD9QknemLTXgP43IpkQ46uU/2s2Fs5iR4z/Q70N5dq/BPzD628selNs/4Pp4DK3VpD90XG/cpDDrP+CqQVj9aO8/lmAHIvKy7T89QkS3oDPvP8AV6oMt+Yc/UBVztLIK3z/hQXabE4PqP0qjbMyG8d8/mgZ9Ip/u5D+ouE2iCo7sP91XTVNlp+E/7MjxQp+b7T9YQwMMGtHgP2xSaOQihtk/alS4r3NA7T8igO1e6knYP8ClGPFJruY/fC3NwBJe1D9GvyD3MxvRP9B55k0ul7E/+8uXmrN57z9K/5BqulnWP8DOnASbabQ//VMajCzm6D+AbE68Sc/TP55AMS0U09I/d94vUTHZ4z/snuS45/TfP+AuoJ3CkK0/XFo1D3RL6j//VleetFrqPwrBQa+cGds/4Lyd9a6LxT/XAbYWPEHsP+hV2Ba1QdA/NKh2pRUc7j8RROZgXDXhP5s2OxdcTOY/pJmYyZePyT8+iag/E5rXPwmW8Y14o+4/1iAiTIMP4D8=", "encoding": "base64", "path": ["_data", 0, "x", "buffer"]}, {"data": "bBVbnKh83T/96qul5I/uPxBaFIEhZq8/6qowR/H70z+nh3/BX1zsP/D2makiA7U/EDn+tDHFtD86BlPqsRHaPzK6RZtzpuM/gN5IXrkB6D/QCLXHeLjXP4+RzHeGJeY/Alt25OMF4j9+dbSSFcTtP89my1XXSeI/QI5jZYeHqD9cN1BrjZzSP4C6ozaP85g/yNRUl2H8zz8mZQe0AW/lP8k8/An9ruM/6KcprLqz5D+TLYSBI6DuP7JSO5a6DtQ/uQZjBHeC4z9ipiVcGCXaPwh0Y2ePrOo/snrr0KKA4j82ATkuo5DkP/ACo+w5yeM/c+QJUYfY7D/iz3dzYhzYP9DI9c27M+w/sKsCgItusz8GMs0fleTRPyFxIhIaBuo/c5GcjLjr4D+MsO2gOo7oP1QB4nLDWcY/mEWYek4NtT8gix4aW1OpPwDAsOTpjM4/VPtsI1mOyz9UTZdR+enjPzyWk1nzJsI/fkS+ltJM4T9cgWbb77PCP7PM9OQwZOM/OnUKnT0w5j+EF8PMhaDoP9TZMlwXQ80/+cYpqiRM7z8gjdBHZq+3Pw6D2EDlyuY/wOc0Zd+dyz/Wcz75ahrbPz52R9YOmOY/Xz9cL1Kd4z/wtGlmSdbCPyeU1U0zC+s/fB/xgc0bxz/01Qwg/kTSP3TUXLc0ANk/oIgRTvtcrD+ozSAWntDiPwDpbVwASGM/FKekzcdU2T8AZWETjEzHP3UdEEh8AeI/69ZmSIwU4z+wbhOK+AvUP6qKdhMPT+8/+08QdPnd6j+QwJNDraa9P8q095vOJNY/281cZCpp4T/QQWER96DbP7hXtY418t4/VI5bnGpi3T+weKbmKXeiP2ivONZkucc/xE3hpcDKxT9LbaiIxBvuP07sas/sftQ/8EDaLiDVuD9oDX8U8SDHP9RLel/oIuE/3DJR/49i5T9IsGeAPAHOP/7k2498kOM/iD6htZCW3z+TkCzWTgTqP1i5XhOPgNs/1v+nXXM26T8Ib1ua7W7fP5h9seUnrtw/ItfQSnLX3z//1TCpRG/vPxBcoEl+Wqk/0t1LkXMu1D8=", "encoding": "base64", "path": ["_data", 0, "y", "buffer"]}]}, "d1d606ceec7749a48565eedf761ab8b2": {"model_name": "FigureModel", "model_module": "plotlywidget", "model_module_version": "^1.0.0", "state": {"_config": {"plotlyServerURL": "https://plot.ly"}, "_data": [{"type": "scatter", "uid": "5a36021c-96e8-40ad-93ed-08ac252f5856"}], "_dom_classes": [], "_js2py_layoutDelta": {}, "_js2py_pointsCallback": {}, "_js2py_relayout": {}, "_js2py_restyle": {}, "_js2py_traceDeltas": {}, "_js2py_update": {}, "_last_layout_edit_id": 0, "_last_trace_edit_id": 0, "_layout": {}, "_model_module": "plotlywidget", "_model_module_version": "^1.0.0", "_model_name": "FigureModel", "_py2js_addTraces": {}, "_py2js_animate": {}, "_py2js_deleteTraces": {}, "_py2js_moveTraces": {}, "_py2js_relayout": null, "_py2js_removeLayoutProps": {}, "_py2js_removeTraceProps": {}, "_py2js_restyle": {}, "_py2js_update": {}, "_view_count": 0, "_view_module": "plotlywidget", "_view_module_version": "^1.0.0", "_view_name": "FigureView"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+{% endraw %}
