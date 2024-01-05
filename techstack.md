@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 zaknbur/plotly.py-docs is built on the following main stack:
+
 - [CircleCI](https://circleci.com/) – Continuous Integration
 - [Python](https://www.python.org) – Languages
 - [NumPy](http://www.numpy.org/) – Data Science Tools
@@ -9,11 +10,13 @@ zaknbur/plotly.py-docs is built on the following main stack:
 - [Smarty](http://www.smarty.net/) – Templating Languages & Extensions
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 zaknbur/plotly.py-docs is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/190/CvqrSSFs_400x400.jpg' alt='CircleCI'/> [CircleCI](https://circleci.com/) – Continuous Integration
 - <img width='25' height='25' src='https://img.stackshare.io/service/993/pUBY5pVj.png' alt='Python'/> [Python](https://www.python.org) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/2179/default_332f874a2edb2686f578aa6389313efcea1eec41.png' alt='NumPy'/> [NumPy](http://www.numpy.org/) – Data Science Tools
@@ -21,14 +24,15 @@ zaknbur/plotly.py-docs is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/3693/smarty.png' alt='Smarty'/> [Smarty](http://www.smarty.net/) – Templating Languages & Extensions
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [zaknbur/plotly.py-docs](https://github.com/zaknbur/plotly.py-docs)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|18<br/>Tools used|11/23/23 <br/>Report generated|
+|18<br/>Tools used|01/05/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -110,17 +114,17 @@ Full tech stack [here](/techstack.md)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
-|[jupyter](https://pypi.org/jupyter)|N/A|07/05/19|Nicolas Kruchten |BSD-3-Clause|N/A|
-|[jupytext](https://pypi.org/jupytext)|v1.1.1|07/05/19|Nicolas Kruchten |MIT|N/A|
-|[networkx](https://pypi.org/networkx)|N/A|07/05/19|Nicolas Kruchten |BSD-3-Clause|N/A|
-|[notebook](https://pypi.org/notebook)|N/A|07/05/19|Nicolas Kruchten |BSD-3-Clause|N/A|
-|[pandas](https://pypi.org/pandas)|v0.23.0|07/09/19|Nicolas Kruchten |BSD-3-Clause|N/A|
-|[patsy](https://pypi.org/patsy)|v0.5.1|07/09/19|Nicolas Kruchten |BSD-2-Clause|N/A|
-|[plotly](https://pypi.org/plotly)|v4.0.0|07/16/19|Jon Mease |MIT|N/A|
-|[psutil](https://pypi.org/psutil)|N/A|07/05/19|Nicolas Kruchten |BSD-3-Clause|N/A|
-|[python-igraph](https://pypi.org/python-igraph)|N/A|07/05/19|Nicolas Kruchten |GPL-3.0-only|N/A|
-|[requests](https://pypi.org/requests)|N/A|07/05/19|Nicolas Kruchten |Apache-2.0|N/A|
-|[statsmodels](https://pypi.org/statsmodels)|v0.9.0|07/09/19|Nicolas Kruchten |BSD-3-Clause|N/A|
+|[jupyter](https://pypi.org/project/jupyter)|N/A|07/05/19|Nicolas Kruchten |BSD-3-Clause|N/A|
+|[jupytext](https://pypi.org/project/jupytext)|v1.1.1|07/05/19|Nicolas Kruchten |MIT|N/A|
+|[networkx](https://pypi.org/project/networkx)|N/A|07/05/19|Nicolas Kruchten |BSD-3-Clause|N/A|
+|[notebook](https://pypi.org/project/notebook)|N/A|07/05/19|Nicolas Kruchten |BSD-3-Clause|N/A|
+|[pandas](https://pypi.org/project/pandas)|v0.23.0|07/09/19|Nicolas Kruchten |BSD-3-Clause|N/A|
+|[patsy](https://pypi.org/project/patsy)|v0.5.1|07/09/19|Nicolas Kruchten |BSD-2-Clause|N/A|
+|[plotly](https://pypi.org/project/plotly)|v4.0.0|07/16/19|Jon Mease |MIT|N/A|
+|[psutil](https://pypi.org/project/psutil)|N/A|07/05/19|Nicolas Kruchten |BSD-3-Clause|N/A|
+|[python-igraph](https://pypi.org/project/python-igraph)|N/A|07/05/19|Nicolas Kruchten |GPL-3.0-only|N/A|
+|[requests](https://pypi.org/project/requests)|N/A|07/05/19|Nicolas Kruchten |Apache-2.0|N/A|
+|[statsmodels](https://pypi.org/project/statsmodels)|v0.9.0|07/09/19|Nicolas Kruchten |BSD-3-Clause|N/A|
 
 <br/>
 <div align='center'>
